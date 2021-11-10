@@ -1,24 +1,54 @@
 // a - необходимое значение
 // b - значение родительского блока
-countPersent(a, b)
+cp(a, b) //countPersent
     a = unit(a, px)
     b = unit(b, px)
     c = a / b * 100
     return unit(c, '%')
 
-countFontSize(s)
+fz(s) //fontSize
     f = 14
-    s = (s - f) / 1920 * 100
-    s = round(s,2)
-    s = (s)vw
+    a = (s - f) / 1920 * 100
+    a = round(a,2)
+    a = (a)vw
     f = f / 10
     f = (f)rem
-    return "calc(%s + %s)" % (f s)
+    s = s / 10
+    s = (s)rem
+    font-size "min(calc(%s + %s), %s)" % (f a s)
 
-countVW(s)
+cw(s) //countVW
     f = s / 2 / 10
     f = (f)rem
-    s = s / 2 / 1920 * 100
-    s = round(s,2)
-    s = (s)vw
-    return "calc(%s + %s)" % (f s)
+    a = s / 2 / 1920 * 100
+    a = round(a,2)
+    a = (a)vw
+    s = s / 10
+    s = (s)rem
+    return "min(calc(%s + %s), %s)" % (f a s)
+
+placeholder-input(color)
+    input[type='text']::-webkit-input-placeholder,
+    input[type='email']::-webkit-input-placeholder,
+    input[type='tel']::-webkit-input-placeholder
+        color color
+    /* webkit */
+
+    input[type='text']::-moz-placeholder,
+    input[type='email']::-moz-placeholder,
+    input[type='tel']::-moz-placeholder
+        color color
+
+    /* webkit */
+
+    input[type='text']:-moz-placeholder,
+    input[type='email']:-moz-placeholder,
+    input[type='tel']:-moz-placeholder
+        color color
+
+    /* webkit */
+
+    input[type='text']:-ms-input-placeholder,
+    input[type='email']:-ms-input-placeholder,
+    input[type='tel']:-ms-input-placeholder
+        color color

@@ -1,78 +1,36 @@
-svg.hide
-  include svg
+//- svg.hide
+//-   include svg
 
-noscript.noscript Чтобы посмотреть сайт включите JavaScript на&nbsp;своём устройстве.
-
-//-.popup
-  a.popup__closer.js-closePopup(href="#")
-  .popup__layer
-  .popup__box
-    .form__wrap
-      .form__box
-        .form__title.js-formTitle
-        form.form.popup__form(action='/' name='sign' method='POST')
-          input.popup__input.form__input.js-requireText(type='text' name="name" value='' placeholder='Ваше имя' minlength='2' tabindex="1")
-          input.popup__input.form__input.js-requirePhone(type='text' name="phone" value='' placeholder='Ваш телефон' minlength='10' tabindex="2")
-          input.form__input.form__input--hide(type='text' name="type" value='')
-          input.popup__input.form__input.form__input--hide(type='text' name="text" value='')
-          button.btn.form__submit.form__submit.disabled(type='submit' disabled="disabled" tabindex="3") Отправить
-      .form__loader
-        svg.img-loader
-          use(xlink:href='#ico-loader')
-      .form__answer-send
-        .form__title
-          p Спасибо, заявка отправлена!
-      .form__answer-error
-        .form__title
-          p Что-то пошло не&nbsp;так, попробуйте снова!
+//- noscript.noscript Чтобы посмотреть сайт включите JavaScript на&nbsp;своём устройстве.
 
 header.header
-  .header__top
-    .header__box.header__box--top
-      .header__main-text Институт экспертной и&nbsp;контрольно-надзорной деятельности НИИСФ&nbsp;РААСН
-      .header__nav
-        nav.nav
-          a.nav__link.js-nav(href="#") Пункт меню 1
-          a.nav__link.js-nav(href="#") Пункт меню 2
-          a.nav__link.js-nav(href="#") Пункт меню 3
-          a.nav__link.js-nav(href="#") Пункт меню 4
-          a.nav__link.js-nav(href="#") Пункт меню 5
-          a.nav__link.js-nav(href="#") Пункт меню 6
-      .header__link-toggle.js-headerToggle
-        span
-  .header__bottom
-    .header__box.header__box--bottom
-      .header__logo
-        .logo
-          .logo__box
-            img.logo__img(src="images/logo.png")
-            .logo__text 
-              p НИИСФ РААСН
-              p НАУЧНО-ИССЛЕДОВАТЕЛЬСИКЙ ИНСТИТУТ<br> СТРОИТЕЛЬНОЙ ФИЗИКИ<br> РОССИЙСКОЙ АКАДЕМИИ АРХИТЕКТУРЫ<br> И&nbsp;СТРОИТЕЛЬНЫХ НАУК
-          .logo__box
-            img.logo__img(src="images/logo2.png")
-            .logo__text 
-              p УНИВЕРСИТЕТ МИНСТРОЯ
-              p МИНИСТЕРСТВО СТРОИТЕЛЬСТВА<br> И&nbsp;ЖИЛИЩНО-КОММУНАЛЬНОГО ХОЗЯЙСТВА<br> РОССИЙСКОЙ ФЕДЕРАЦИИ
-      .header__phone
-        a.phone.phone--header(href="tel:+74955067152") +7 (495) 506-71-52
-          svg.phone__ico.phone__ico--header.ico.ico--phone
-            use(xlink:href='#ico-phone')
-      .header__mail
-        a.mail.mail--header(href="mailto:iexp@niisf.ru") iexp@niisf.ru
-          svg.mail__ico.mail__ico--header.ico.ico--mail
-            use(xlink:href='#ico-mail')
-      .header__search-block
-        .search-block
-          form.search-block__form.search-block__form--hide.form
-            input.search-block__input.form__input.form__input--search.js-requireText(type="text" value="")
-            button.form__submit.form__submit--search.disabled(type='submit' disabled="disabled" tabindex="3")
-              svg.search-block__ico.search-block__ico--header.ico.ico--search
-                use(xlink:href='#ico-search')
-          a.search-block__link.js-searchLink(href="#")
-            svg.search-block__ico.search-block__ico--header.ico.ico--search
-              use(xlink:href='#ico-search')
-      .header__user-link
-        a.user-link(href="#")
-          svg.user-link__ico.user-link__ico--header.ico.ico--user
-            use(xlink:href='#ico-user')
+  .header__top.headerTop
+    .headerTop__flagBox.headerTopFlagBox
+      img.headerTopFlagBox__img(src="images/flag1.png")
+    .headerTop__logoBox.headerTopLogoBox
+      a(href="index.html") 
+        img.headerTopLogoBox__img(src="images/logo1.svg")
+    .headerTop__flagBox.headerTopFlagBox
+      img.headerTopFlagBox__img(src="images/flag2.png")
+    .headerTop__menuBtn.mobileMenu
+      .mobileMenu__btn.mobileMenuBtn
+        span.mobileMenuBtn__line
+  .header__menuWrapper.headerMenuWrapper
+    ul.headerMenuList
+      li
+        a(href="#") О Краснодаре
+      li
+        a(href="krd-metro.html") Краснодарский метрополитен
+      li
+        a(href="laws.html") Законодательная база
+      li
+        a(href="#") Видеопрезентация
+      li
+        a(href="#") Тендеры. Контракты
+      li
+        a(href="structure-directors.html") Структура дирекции по строительству
+
+
+            //- <div class="mobile__menu">
+            //-     <div class="menu__btn"><span class="menu__btn-line"></span></div>
+            //- </div>

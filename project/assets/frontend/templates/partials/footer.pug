@@ -1,28 +1,29 @@
 footer.footer
-  .footer__box
-    .footer__title.title Об институте
-    .footer__list
-      a.footer__link(href="#") Общая информация
-      a.footer__link(href="#") Лицензия и учредительные документы
-      a.footer__link(href="#") Правовые и правоустанавливающие документы
-  .footer__box
-    .footer__title.title Поступление и обучение
-    .footer__list
-      a.footer__link(href="#") Программы повышения квалификации
-      a.footer__link(href="#") Программы профессиональной переподготовки
-      a.footer__link(href="#") Система дистанционного обучения
-      a.footer__link(href="#") Документы для поступающих
-  .footer__box
-    .footer__title.title Заявка на обучение
-    .footer__form
-      form.form.form--footer(method="POST" action="")
-        input.form__input.form__input--footer.js-requireText(type='text' name="name" value='' placeholder='Ваше имя' minlength='2' tabindex="1")
-        input.form__input.form__input--footer.js-requirePhone(type='text' name="phone" value='' placeholder='Номер телефона' minlength='15' tabindex="2")
-        button.button.form__submit.form__submit--footer.disabled(type='submit' disabled="disabled" tabindex="3") Отправить
-      .form__loader
-        svg.img-loader
-          use(xlink:href='#ico-loader')
-      .form__answer-send
-        p Спасибо, заявка отправлена.
-      .form__answer-error
-        p Произошла ошибка, попробуйте&nbsp;снова.
+  .footer__top.footerTop
+    h2.footerTop__title контакты
+  .footer__content.footerContent 
+    .footerContent__logoBox.footerContentLogoBox 
+      a(href="index.html") 
+        img(src="images/logo1.svg", alt="")
+    .footerContent__column.footerContentColumn 
+      .footerContentColumn__item.footerContentColumnItem 
+        .footerContentColumnItem__title Адрес: 
+        .footerContentColumnItem__text город Краснодар
+      .footerContentColumn__item.footerContentColumnItem 
+        .footerContentColumnItem__title Телефон:
+        .footerContentColumnItem__text 
+          a(href="tel:+79383150701") 8 (938) 315-07-01
+    .footerContent__column.footerContentColumn 
+      .footerContentColumn__item.footerContentColumnItem 
+        .footerContentColumnItem__title Email: 
+        .footerContentColumnItem__text 
+          a(href="mailto:info@krdmetro.ru") info@krdmetro.ru
+      .footerContentColumn__item.footerContentColumnItem.footerContentColumnItem--social 
+        .footerContentColumnItem__title Соц.сети:
+        .footerContentColumnItem__socials.footerContentColumnItemSocials
+          a(href="#") 
+            img(src="images/insticon.svg", alt="")
+          a(href="#") 
+            img(src="images/tgicon.svg", alt="")
+  .footer__bottom.footerBottom 
+    p © 2021  Краснодарский метрополитен. Все права защищены

@@ -1,53 +1,671 @@
-html
-  height 100%
 
+html,
+body
+  font-size 10px
+
+html
+  scroll-behavior: smooth;
+
+body
+  font-family: 'HelveticaNeueCyr', sans-serif;
+
+a 
+  color inherit
+  text-decoration none
+  
 .hide
   display none
 
-.hidden
-  overflow hidden
+.textInfoCard
+    fz(24)
+    line-height 1.46
+    text-transform uppercase
+    color #fff
+    background-color #23164B
+    strong
+      font-weight bold
 
-.clearfix
-  zoom 1
+// .container
+  // max-width 1618px
+  // padding 0 15px
+  // margin 0 auto
 
-.clearfix:after
-  clear both
-  content ''
+// krdMetro page styles start
+.krdmetro
+  wrapper()
+  padding-top cw(62)
+  margin-bottom cw(135)
+  p 
+    fz(20)
+    line-height 1.45
+    color #000
+.krdmetroFirstBlock
+  display flex
+  justify-content space-between
+  margin-bottom 52px
+  lg(flex-direction, column)
+.krdmetroFirstBlockLeft
+  width 38%
+  lg(width, 100%)
+  lg(margin-bottom, cw(30))
+  h1 
+    padding-left cw(15)
+    margin-bottom cw(64)
+    fz(24)
+    line-height 1.407
+    text-transform uppercase
+    color #000
+    font-family: 'HelveticaNeueCyr', sans-serif;
+    position relative
+    &::before
+      content ''
+      position absolute
+      left 0
+      top 0
+      bottom 0
+      width 4px
+      background-color #E42829
+  p
+    margin-bottom 47px
+  .krdmetroFirstBlockLeft__infoCard
+    padding 12px 28px 12px 52px
+    max-width 420px
+    lg(margin, 0 auto)
+.krdmetroFirstBlockRight
+  width 56%
+  lg(width, auto)
+  lg(max-width, 700px)
+  lg(margin, 0 auto)
+  a 
+    display block
+    position relative
+    &::after
+      content url('../images/videoPlayBtn1.svg')
+      position absolute
+      left 50%
+      top 50%
+      transform translate(-50%, -50%)
+      lg(transform, translate(-50%, -50%) scale(0.7))
+      transition all .3s
+    &:hover
+      &::after
+        transform translate(-50%, -50%) scale(1.2)
+  img 
+    width 100%
+    height auto
+    object-fit cover
+.krdmetroSecondBlock
+  display flex
+  justify-content space-between
+  align-items stretch
+  lg(flex-direction, column)
+.krdmetroSecondBlockColumn
+  width 27%
+  display flex
+  flex-direction column
+  justify-content space-between
+  lg(width, 100%)
+  lg(margin-bottom, cw(90))
+  p 
+    margin-bottom 20px
+  img 
+    display block
+    width 100%
+    height auto
+    object-fit cover
+    max-width 400px
+  .krdmetroSecondBlockColumn__infoCard
+    padding 30px 20px 30px 40px
+    lg(max-width, 300px)
+    lg(margin-bottom, cw(20))
+// krdMetro page styles end
+
+// scheme page styles start
+.schemeBlock
+  wrapper()
+  padding-top cw(89)
+  margin-bottom cw(145)
+  border-radius 50px
+.schemeBlockImgBlock
+  width 80%
+  margin 0 auto
+  position relative
+  sm(width, 100%)
+  img 
+    display block
+    width 100%
+    height auto
+    object-fit contain
+.schemeBlockImgBlock__GoToLink
+  position absolute
+  top 62px
+  right 43px
+  z-index 2
+  background-color #00FF01
+  border-radius cw(87)
+  padding 17px 23px
+  transition all .3s
+  sm(display, none)
+  span
+    font-weight 550
+    fz(18)
+    line-height 1.45
+    padding-right cw(35)
+    text-transform uppercase
+    color #000
+    position relative
+    &::after
+      content url('../images/arrow1.svg')
+      position absolute
+      right 0
+      top -6px
+.schemeStationsBlock
+  wrapper()
+  display flex
+  justify-content space-between
+  margin-bottom cw(150)
+  md(flex-wrap, wrap)
+  md(justify-content, space-around)
+  xs(flex-direction, column)
+  xs(align-items, center)
+.stationsColumnItem
+  padding-left 109px
+  md(margin-bottom, cw(50))
+  sm(padding-left, 50px)
+  xs(width, fit-content)
+.stationsColumnItem__title
+  fz(24)
+  line-height 1.407
+  text-transform uppercase
+  color #000
+  margin-bottom 25px
+  position relative
+  &::before
+    content ''
+    position absolute
+    left -109px
+    sm(left, -50px)
+    transform: translateY(-50%);
+    top 50%
+    width 75px
+    sm(width, 38px)
+    sm(height, 5px)
+    height 8px
+.stationsColumnItem__title--red
+  &::before
+    background-color #E42829
+.stationsColumnItem__title--blue
+  &::before
+    background-color #0000FE
+.stationsColumnItemList
+  li
+    fz(18)
+    line-height 1.45
+    color #000
+    padding-left 22px
+    margin-bottom 21px
+    position relative
+    &::before
+      content ''
+      position absolute
+      left 0
+      top 50%
+      transform translateY(-50%)
+      width 10px
+      height 10px
+      border-radius 50%
+      background-color #00FF01
+.stationsFormBlock
+  width 29%
+  md(width, 100%)
+  md(max-width, 500px)
+  md(text-align, center)
+.stationsFormBlock__title
+  font-weight bold
+  fz(24)
+  line-height 1.407
+  text-transform uppercase
+  color #000
+  margin-bottom 20px
+.stationsForm__input
   display block
-  height 0
-  visibility hidden
+  width 100%
+  fz(16)
+  line-height 1.45
+  letter-spacing 0.05em
+  color #000
+  border 1px solid #C5C5C5
+  padding 20px 12px
+  margin-bottom cw(37)
+  &::placeholder
+    color #000
+    text-transform uppercase
+.stationsForm__textarea
+  display block
+  width 100%
+  fz(16)
+  line-height 1.45
+  letter-spacing 0.05em
+  text-transform uppercase
+  color #000
+  border 1px solid #C5C5C5
+  padding 20px 12px
+  margin-bottom 22px
+  min-height 180px
+  &::placeholder
+    color #000
+.stationsForm__btn
+  background: #23164B;
+  border-radius: 87px;
+  padding 20px 27px
+  fz(18)
+  line-height 1.45
+  letter-spacing 0.05em
+  text-transform uppercase
+  color #fff
+  border none
+  cursor pointer
+  transition all .3s
+  &:hover
+    background: lighten(#23164B, 20%)
+// scheme page styles end
 
-.nobr
-  white-space nowrap
 
-.italic
-  font-style italic
+// laws page styles start
+.lawsBlock
+  padding-top 68px
+  padding-bottom 93px
+  wrapper()
+.lawsBlock__title
+  padding-left cw(15)
+  margin-bottom cw(49)
+  fz(24)
+  line-height 1.407
+  text-transform uppercase
+  color #000
+  max-width 610px
+  position relative
+  &::before
+    content ''
+    position absolute
+    left 0
+    top 0
+    bottom 0
+    width 4px
+    background-color #E42829
+.lawsBlock__pWrapper
+  p 
+    fz(20)
+    line-height 1.45
+    color #000
+    max-width 910px
+    margin-bottom cw(25)
+.lawsBlock__pWrapper--central 
+  margin-left 17%
+  xs(margin-left, 0)
+  margin-bottom cw(35)
+  p 
+    max-width 850px
+    margin-bottom 0
+  .lawsBlock__pUpperCase
+    text-transform uppercase
+.lawsBlockTextBlockColumns
+  display flex
+  justify-content space-between
+  margin-bottom cw(68)
+  lg(flex-direction, column)
+.lawsBlockTextBlockColumn
+  width 30%
+  lg(width, 100%)
+  lg(margin-bottom, cw(25))
+  &--infoCard
+    width 424px
+    .textInfoCard
+      padding 41px 35px 41px
+      margin-bottom 11px
+      lg(max-width, 370px)
+    .lawsBlockTextBlockColumn__author
+      fz(24)
+      line-height 1.45
+      color #000
+      text-align right
+  p 
+    fz(20)
+    line-height 1.45
+    color #000
+// laws page styles end
 
-.float-left
-  float left
+// pluses page styles start
+.plusesBlock
+  padding-top cw(111)
+  padding-bottom cw(160)
+.plusesBlockListItem
+  border-bottom 1px solid #989898
+  &:last-child
+    border none
+.plusesBlockListItemContent
+  display block
+  text-transform uppercase
+  wrapper()
+  padding-top 12px
+  padding-bottom 25px
+  display flex
+  sm(flex-direction, column)
+  sm(align-items, center)
+  sm(text-align, center)
+.plusesBlockListItemContent__num
+  fz(36)
+  line-height 1
+  color #23164B
+  letter-spacing 0.02em
+  display block
+  margin-right cw(64)
+  sm(margin-right, 0)
+.plusesBlockListItemContent__text
+  fz(28)
+  line-height 1.29
+  letter-spacing 0.01em
+  color #000
+  display block
+  margin-top 18px
 
-.float-right
-  float right
 
-.align-left
-  text-align left
+// pluses page styles end
+// features page styles end
+.featuresSection
+  padding-top cw(53)
+  padding-bottom cw(167)
+  wrapper()
+.featuresSectionRow
+  display flex
+  justify-content space-between
+  align-items center
+  lg(flex-direction, column)
+.featuresSectionRow--first 
+  .textInfoCard
+    padding 50px 25px 50px 30px
+    lg(margin-bottom, cw(30))
+.featuresSectionRow--center
+  justify-content center
+  margin-bottom cw(40)
+.featuresSectionRow--baseline
+  align-items flex-start
+  .textInfoCard
+    padding 37px 16px
+    lg(margin, 0 auto cw(40))
+.featuresSectionRowItem
+  max-width 700px
+  lg(max-width, none)
+  lg(text-align, center)
+  lg(margin-bottom, cw(40))
+.featuresSectionRow__infoCard
+  max-width 420px
+  padding 20px
+  fz(18)
+.featuresSectionRowItemNumBlock
+  font-family: Yellowtail;
+  fz(60)
+  line-height (82/60)
+  letter-spacing 0.02em
+  text-transform uppercase
+  color #23164B
+  border-radius 50%
+  border 1px dashed #23164B
+  width cw(100)
+  height cw(100)
+  display flex
+  justify-content center
+  align-items center
+  margin-bottom cw(41)
+  lg(margin, 0 auto cw(41) auto)
+.featuresSectionRowItemNumBlock__content
+  position relative
+  left -7%
+.featuresSectionRowItem__text
+  fz(20)
+  line-height 1.45
+  color #000
+.featuresSectionRowColumn--start
+  .featuresSectionRowItem
+    width 130%
+    margin-bottom cw(60)
+    lg(width, 100%)
+  .featuresSectionRowColumnImgBlock__img
+    display block
+    width 80%
+    height auto
+    object-fit cover
+    lg(max-width, 400px)
+    lg(margin, 0 auto)
+    lg(margin-bottom, cw(40))
+.featuresSectionRowColumn--center
+  align-self center
+  position relative
+  // top -50px
+.featuresSectionRowColumn--end
+  align-self flex-end
+  position relative
+  .featuresSectionRowItem
+    width 150%
+    position relative
+    left -50%
+    lg(width, 100%)
+    lg(left, 0)
+    lg(position, static)
+    .featuresSectionRowItemNumBlock
+      margin-bottom cw(30)
+// features page styles end
 
-.align-right
-  text-align right
+// integrated-development page styles start
+.developmentBlock
+  wrapper()
+  padding-top cw(66)
+  margin-bottom cw(102)
+  .developmentBlock__title
+    max-width 1164px
+    fz(24)
+    line-height 1.407
+    text-transform uppercase
+    color #000
+    padding-left cw(18)
+    margin-bottom cw(85)
+    position relative
+    &::after
+      content ''
+      position absolute
+      left 0
+      top 0
+      bottom 0
+      width 4px
+      background-color #E42829
+.developmentBlockRow
+  display flex
+  justify-content space-between
+  margin-bottom cw(85)
+  sm(flex-direction, column)
+  p 
+    sm(margin-bottom, cw(20))
+.developmentBlockRow__item.developmentBlockRowItem
+  width 47%
+  fz(20)
+  line-height 1.45
+  color #000
+  sm(width, 100%)
+.developmentBlockRow--center
+  .developmentBlockRowItem
+    width 100%
+    color #fff
+    fz(24)
+    text-align center
+    padding cw(45)
+    p 
+      max-width 690px
+      margin 0 auto
 
-.align-center
+// integrated-development page styles end
+
+// structure-directors page styles start
+.structureBlock
+  padding-top cw(67)
+  wrapper()
+  margin-bottom cw(230)
+.structureBlockRow
+  display flex
+  justify-content center
+  margin-bottom 110px
+  md(justify-content, space-between)
+.structureBlockRow--head
+  md(justify-content, center)  
+  .structureBlockRowItem
+    position relative
+    z-index 2
+    &::before
+      content url('../images/icons/arrow-down2.svg')
+      position absolute
+      left -31%
+      top 90%
+      transform translateY(-50%)
+      z-index -1
+      xl(left, calc((-18vw * 1) + 93px))
+      lg(left, calc((-28vw * 1) + 230px))
+      md(left, calc((-28vw * 1) + 180px))
+      sm(left, calc((-20vw * 1) + 110px))
+      xs(left, calc((15vw * 1) + -57px))
+    &::after
+      content url('../images/icons/arrow-down3.svg')
+      position absolute
+      right -31%
+      top 90%
+      transform translateY(-50%)
+      z-index -1
+      xl(right, calc((-18vw * 1) + 93px))
+      lg(right, calc((-28vw * 1) + 230px))
+      md(right, calc((-28vw * 1) + 180px))
+      sm(right, calc((-20vw * 1) + 110px))
+      xs(right, calc((15vw * 1) + -57px))
+    .structureBlockRowItem__content
+      width 530px
+      text-align center
+      padding 50px 90px
+      md(width, 100%)
+      md(max-width, 550px)
+.structureBlockColumn
+  margin-left cw(85)
+  margin-right cw(85)
+  width 510px
+  md(width, 45%)
+  md(margin, 0)
+  xs(width, 48%)
+.structureBlockColumnItem
+  width 100%
+  margin-bottom 160px
+  border 1px solid #E42829
+  min-height 240px
+  padding 30px
+  display flex
+  justify-content center
+  align-items center
+  position relative
+  xs(padding, cw(20))
+  &::after
+    content url('../images/icons/arrow-down1.svg')
+    position absolute
+    bottom -150px
+    height 136px
+    left 50%
+    transform translateX(-50%)
+.structureBlockColumnItem:last-child
+  margin-bottom 0
+  &::after
+    display none
+.structureBlockColumnItem--special1
+  border 1px solid #EAEAEA
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.17);
+  width 123%
+  md(width, 100%)
+.structureBlockColumnItemContent
+  fz(28)
+  line-height 1.1
   text-align center
+  color #000
+.structureBlockColumnItemContent__title
+  text-align left
+  margin-bottom cw(22)
+  xs(text-align, center)
+.structureBlockColumnItemContentContacts
+  display flex
+  justify-content space-between
+  md(flex-direction, column)
+// .structureBlockContactsColumn__item
+//   padding-bottom cw(38)
+.structureBlockContactItem__tel
+  display inline-block
+  fz(28)
+  line-height 1.082
+  color #000
+  letter-spacing 0.01em
+  padding-left cw(41)
+  margin-bottom cw(38)
+  position relative
+  sm(padding-left, 28px)
+  @media(max-width:768px)
+    fz(22)
+  xs(padding-left, 0)
+  xs(margin-top, 25px)
+  &::before
+    content url('../images/icons/phone-icon1.png')
+    position absolute
+    top 0
+    left 0
+    xs(left, 50%)
+    xs(transform, translate(-50%, -25px))
+.structureBlockContactItem__email
+  fz(28)
+  line-height 1
+  color #000
+  text-transform lowercase
+  padding-left cw(41)
+  position relative
+  md(margin-bottom, cw(38))
+  md(display, inline-block)
+  sm(padding-left, 28px)
+  @media(max-width:768px)
+    fz(22)
+  xs(padding-left, 0)
+  xs(margin-top, 25px)
+  &::before
+    content url('../images/icons/mail-icon1.svg')
+    position absolute
+    top 0
+    left 0
+    xs(left, 50%)
+    xs(transform, translate(-50%, -25px))
+.structureBlockContactItem__link
+  display inline-block
+  fz(28)
+  line-height 1.082
+  color #000
+  margin-bottom cw(38)
+  padding-left cw(31)
+  position relative
+  sm(padding-left, 28px)
+  @media(max-width:768px)
+    fz(22)
+  xs(padding-left, 0)
+  xs(margin-top, 25px)
+  &::before
+    content url('../images/icons/link-icon1.svg')
+    position absolute
+    top 0
+    left 0
+    xs(left, 50%)
+    xs(transform, translate(-50%, -25px))
+.structureBlockContactItemSocials
+  display flex
+  md(justify-content, center)
+.structureBlockContactItemSocials__link
+  display inline-block
+  & + .structureBlockContactItemSocials__link
+    margin-left cw(24)
 
-a
-  text-decoration none
-  color inherit
-
-p
-  margin 0
-  
-img
-  display block
-  max-width 100%
-    
-strong
-  font-weight 600
+// structure-directors page styles end
