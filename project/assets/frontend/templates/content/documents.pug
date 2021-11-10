@@ -1,0 +1,31 @@
+.page
+  .page__box
+    .page__aside
+      include ../partials/aside
+    .page__main
+      .page__main-content
+        .content
+          .content__title Документы для поступающих
+          .content__box 
+            .documents
+              .documents__text
+                p 
+                  strong Для заключения договора и выставления счета, необходимо:
+                p Заполнить и прислать на 
+                  a(href="mailto:iexp@niisf.ru")
+                    strong e-mail: iexp@niisf.ru
+              .documents__list
+                .documents__list-item Заявку для заключения договора и выставления счета.<br> В приложении есть форма заявки от физического и от юридического лица. Заполняйте ту, которая подходит Вам.
+                  .documents__list-num.title 1
+                .documents__list-item Заявление о приеме на обучение.
+                  .documents__list-num.title 2
+                .documents__list-item Копию паспорта (первая страница и страница с регистрацией).
+                  .documents__list-num.title 3
+                .documents__list-item Копию диплома об образовании (для личного дела слушателя).
+                  .documents__list-num.title 4
+              .documents__download.title
+                a.documents__download-item(href="#") Скачать образец заявления от физлица
+                a.documents__download-item(href="#") Скачать образец заявления на обучение
+                a.documents__download-item(href="#") Скачать образец заявления от юрлица
+      .page__main-footer
+        include ../partials/footer

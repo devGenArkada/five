@@ -1,0 +1,56 @@
+.page
+  .page__introduce
+    .introduce Университет Минстроя<br> Институт экспертной и&nbsp;контрольно-надзорной деятельности<br> НИИСФФ&nbsp;РААСН
+  .page__box
+    .page__aside
+      include ../partials/aside
+    .page__main
+      .page__main-content
+        .content.content--index
+          .content__main
+            .news-list
+              .news-list__title.title НОВОСТИ
+              .news-list__slider.slider
+                .news-list__slider-nav.slider__nav
+                  .news-list__btn-left.slider__btn.slider__btn--left
+                    svg.news-list__ico.slider__ico.ico.ico--arr
+                      use(xlink:href='#ico-arr')
+                  .news-list__btn-right.slider__btn.slider__btn--right
+                    svg.news-list__ico.slider__ico.ico.ico--arr
+                      use(xlink:href='#ico-arr')
+                .news-list__slider-box.slider__box
+                  .news-list__slider-item.slider__item
+                    img.news-list__img(src="images/img_test-news.jpg")
+                    .news-list__name Разнообразный и богатый опыт начало повседневной работы по формированию позиции.
+                    .news-list__text Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. Повседневная практика показывает, что укрепление и развитие структуры влечет за собой процесс внедрения и модернизации модели развития.
+                  .news-list__slider-item.slider__item
+                    img.news-list__img(src="images/img_test-news.jpg")
+                    .news-list__name Разнообразный и богатый опыт начало повседневной работы по формированию позиции.
+                    .news-list__text Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. Повседневная практика показывает, что укрепление и развитие структуры влечет за собой процесс внедрения и модернизации модели развития.
+                  .news-list__slider-item.slider__item
+                    img.news-list__img(src="images/img_test-news.jpg")
+                    .news-list__name Разнообразный и богатый опыт начало повседневной работы по формированию позиции.
+                    .news-list__text Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. Повседневная практика показывает, что укрепление и развитие структуры влечет за собой процесс внедрения и модернизации модели развития.
+          .content__aside
+            .anonce-list
+              .anonce-list__title.title АНОНСЫ
+              .anonce-list__item
+                .anonce-list__text Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий требуют от нас анализа системы обучения кадров, соответствует насущным потребностям.
+                .anonce-list__date-wrap
+                  .anonce-list__date 22.04.21 г.
+                a.anonce-list__link(href="#") Перейти
+                  svg.anonce-list__ico.ico.ico--arrow
+                    use(xlink:href='#ico-arrow')
+            .content__divide
+            .events-list
+              .events-list__title.title МЕРОПРИЯТИЯ
+              .events-list__item 
+                .events-list__text Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий требуют от нас анализа системы обучения кадров, соответствует насущным потребностям. 
+                .events-list__date-wrap
+                  .events-list__date 22.04.21 г.
+                a.events-list__link(href="#") Перейти
+                  svg.events-list__ico.ico.ico--arrow
+                    use(xlink:href='#ico-arrow')
+
+      .page__main-footer
+        include ../partials/footer

@@ -1,0 +1,24 @@
+// a - необходимое значение
+// b - значение родительского блока
+countPersent(a, b)
+    a = unit(a, px)
+    b = unit(b, px)
+    c = a / b * 100
+    return unit(c, '%')
+
+countFontSize(s)
+    f = 14
+    s = (s - f) / 1920 * 100
+    s = round(s,2)
+    s = (s)vw
+    f = f / 10
+    f = (f)rem
+    return "calc(%s + %s)" % (f s)
+
+countVW(s)
+    f = s / 2 / 10
+    f = (f)rem
+    s = s / 2 / 1920 * 100
+    s = round(s,2)
+    s = (s)vw
+    return "calc(%s + %s)" % (f s)

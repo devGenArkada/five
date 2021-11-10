@@ -1,0 +1,28 @@
+footer.footer
+  .footer__box
+    .footer__title.title Об институте
+    .footer__list
+      a.footer__link(href="#") Общая информация
+      a.footer__link(href="#") Лицензия и учредительные документы
+      a.footer__link(href="#") Правовые и правоустанавливающие документы
+  .footer__box
+    .footer__title.title Поступление и обучение
+    .footer__list
+      a.footer__link(href="#") Программы повышения квалификации
+      a.footer__link(href="#") Программы профессиональной переподготовки
+      a.footer__link(href="#") Система дистанционного обучения
+      a.footer__link(href="#") Документы для поступающих
+  .footer__box
+    .footer__title.title Заявка на обучение
+    .footer__form
+      form.form.form--footer(method="POST" action="")
+        input.form__input.form__input--footer.js-requireText(type='text' name="name" value='' placeholder='Ваше имя' minlength='2' tabindex="1")
+        input.form__input.form__input--footer.js-requirePhone(type='text' name="phone" value='' placeholder='Номер телефона' minlength='15' tabindex="2")
+        button.button.form__submit.form__submit--footer.disabled(type='submit' disabled="disabled" tabindex="3") Отправить
+      .form__loader
+        svg.img-loader
+          use(xlink:href='#ico-loader')
+      .form__answer-send
+        p Спасибо, заявка отправлена.
+      .form__answer-error
+        p Произошла ошибка, попробуйте&nbsp;снова.
