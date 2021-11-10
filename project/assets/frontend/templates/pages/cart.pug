@@ -1,0 +1,12 @@
+extends ../layouts/default
+
+block content
+  include ../content/cart
+
+block scripts
+  +script([
+    'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
+    'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js',
+    'swiper.min.js',
+    'main.js'
+  ])
