@@ -4,4 +4,22 @@
 //- noscript.noscript Чтобы посмотреть сайт включите JavaScript на&nbsp;своём устройстве.
 
 header.header
-  div header content
+  .header__inner.headerInner
+    .headerInner__logoBox.headerInnerLogoBox 
+      img(src="images/logo/logoHeader.png", alt="")
+    nav.headerInner__nav.headerInnerNav
+      ul.headerInnerNav__list.headerInnerNavList 
+        li
+          a(href="#") Каталог
+        li
+          a(href="#") О нас
+        li
+          a(href="#") Доставка и оплата
+    .headerInner__userBlock.headerInnerUserBlock 
+      .headerInnerUserBlock__wishlist.headerInnerUserBlockWishlist 
+        a(href="#") 
+          img(src="images/icons/wishlist-icon.png", alt="")
+      .headerInnerUserBlock__cart.headerInnerUserBlockCart 
+        a(href="#") 
+          img(src="images/icons/cart.png", alt="")
+        .headerInnerUserBlockCart__amount 3
