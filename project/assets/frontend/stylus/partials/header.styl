@@ -15,6 +15,9 @@
       fz(20)
       line-height (26/20)
       color $baseColor
+      @media(min-width:992px)
+        &:hover
+          text-decoration underline
 .headerInnerUserBlock
   display flex
   align-items flex-end
@@ -25,7 +28,7 @@
 .headerInnerUserBlockCart__amount
   position absolute
   right -4px
-  top 0
+  top 5px
   z-index 2
   width cw(26)
   height cw(26)
@@ -39,6 +42,10 @@
   display flex
   align-items center
   justify-content center
+
+
+
+
 
 
 // mobile menu

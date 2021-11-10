@@ -16,12 +16,75 @@ a
 .hide
   display none
 
-.textInfoCard
-    fz(24)
-    line-height 1.46
-    text-transform uppercase
-    color #fff
-    background-color #23164B
-    strong
-      font-weight bold
+.blockTitleBox
+  position relative
+.blockTitleBox__line
+  position absolute
+  content ''
+  width 100%
+  height 1px
+  background-color $baseColor
+  top 50%
+  z-index -1
 
+.blockTitleBox__title
+  fz(30)
+  line-height (39/30)
+  color: $baseColor
+  position relative
+  z-index 2
+  width fit-content
+  background-color #fff
+  padding-right cw(62)
+
+
+
+// index page styles start
+.firstScreen
+  height 80vh
+  background-image url('../images/main-bg.jpg')
+  background-repeat no-repeat
+  background-size cover
+  background-position center top
+  position relative
+.firstScreen__link
+  display block
+  max-width 280px
+  border: 2px solid #fff
+  color: #fff
+  fz(23)
+  font-family: $fontLight
+  padding 18px 44px
+  margin 0 auto
+  position relative
+  top 65%
+  @media(min-width:992px)
+    &:hover
+      text-decoration underline
+.specialOffersBlock
+  wrapper()
+  padding-top cw(100)
+.specialOffersBlock__titleWrapper
+  margin-bottom cw(101)
+.specialOffersBlock__mainLink
+  position relative
+  display block
+  margin-right 0
+  margin-left auto
+  width fit-content
+  fz(20)
+  line-height (26/20)
+  color $baseColor
+  font-family $fontLight
+  padding-right 119px
+  margin-bottom cw(74)
+  @media(min-width: 992px)
+    &:hover
+      text-decoration underline
+  &::after
+    position absolute
+    content url('../images/arrows/arrow-right1.svg')
+    right 0
+    top 50%
+    transform translateY(-50%)
+// index page styles end
