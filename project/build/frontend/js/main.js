@@ -23,11 +23,32 @@ window.onload = function() {
     });
   }
 
+  // function BusinessCardDecor() {
+  //   let rightOffset = ($(window).width() - ($('.businessCardBlock__textContent').offset().left + $('.businessCardBlock__textContent').outerWidth()));
+  //   $('.businessCardBlockTextContent__decor').css("right", "-" + rightOffset + "px")
+  //   console.log('resized2')
+  // }
+
+  function businessCardDecor() {
+    $(window).on("resize", function () {
+      var rightOffset = ($(window).width() - ($('.businessCardBlock__textContent').offset().left + $('.businessCardBlock__textContent').outerWidth()));
+      $('.businessCardBlockTextContent__decor').css("right", "-" + rightOffset + "px")
+      console.log('resized4')
+    }).resize();
+  }
+
+  // $(window).on("resize", BusinessCardDecor()).resize();
+
 
 
   // mobileMenu();
   productWishlist();
+  
+  // BusinessCardDecor();
 
+  if ($(window).width() > 768) {
+    businessCardDecor();
+  }
 };
 
 

@@ -161,9 +161,67 @@ a
   display block
   width 23%
   // width 23.75%
-
-
-
-
+.businessCardBlock
+  wrapper()
+  display flex
+  align-items flex-end
+  justify-content space-between
+.businessCardBlockImages
+  width 57%
+.businessCardBlockImagesTop
+  margin 0 auto
+  width fit-content
+  position relative
+  top 160px
+  left 90px
+.businessCardBlockImagesBottom
+  display flex
+  align-items flex-end
+  justify-content space-between
+.businessCardBlockImagesBottom__imgWrapper
+  img
+    display block
+    width 100%
+    height auto
+    object-fit: cover
+  &:first-child
+    width 56%
+  &:last-child
+    width 41%
+.businessCardBlockTextContent
+  position relative
+  width 38%
+  p
+    font-family $fontLight
+    fz(21)
+    line-height (27/21)
+    color $baseColor
+    margin-bottom cw(20)
+.businessCardBlockTextContent__decor
+    position absolute
+    left 0
+    right 0
+    top -143px
+    height 1px
+    background-color $baseColor
+.businessCardBlockTextContent__title
+  font-family $fontMd
+  fz(24)
+  line-height (30/24)
+  color $baseColor
+  margin-bottom cw(47)
+.businessCardBlockTextContent__link
+  display block
+  width fit-content
+  margin-top cw(88)
+  border 1px solid $baseColor
+  padding 15px 53px
+  font-family $fontLight
+  fz(21)
+  line-height (27/21)
+  color $baseColor
+  transition: all .3s
+  &:hover
+    background-color #d5d5d5
 
   // index page styles end
