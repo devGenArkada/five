@@ -161,11 +161,13 @@ a
   display block
   width 23%
   // width 23.75%
+
 .businessCardBlock
   wrapper()
   display flex
   align-items flex-end
   justify-content space-between
+  margin-bottom cw(135)
 .businessCardBlockImages
   width 57%
 .businessCardBlockImagesTop
@@ -223,5 +225,53 @@ a
   transition: all .3s
   &:hover
     background-color #d5d5d5
+.feedBackBlock
+  background-color $baseColor
+  padding-top cw(70)
+  padding-bottom cw(75)
+.feedBackContent
+  wrapper()
+  display flex
+  justify-content space-between
+.feedBackContentHeaders__mainTitle
+  font-family $fontMd
+  fz(30)
+  line-height (38/30)
+  color #fff
+  margin-bottom cw(42)
+.feedBackContentHeaders__subtitle
+  font-family $fontLight
+  fz(22)
+  line-height (29/20)
+  color #fff
+.feedBackContentFormWrapper
+  width 38%
+.feedBackContentForm
+  display flex
+  flex-direction: column
+  max-width: 245px
+.feedBackContentForm__input
+  margin-bottom cw(53)
+  font-family $fontLight
+  fz(20)
+  line-height (26/20)
+  color #fff
+  background-color: transparent
+  padding-bottom cw(13)
+  border none
+  border-bottom 1px solid #fff
+  &::placeholder
+    color: rgba(255, 255, 255, 0.6);
+  &--btn
+    border 1px solid #fff
+    padding-top cw(15)
+    padding-bottom cw(15)
+    transition: all .3s
+    @media(min-width: 992px)
+      &:hover
+        background-color: #222
+
+
+
 
   // index page styles end
