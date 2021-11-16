@@ -281,25 +281,58 @@ a
 .testimonialsSliderItem
   border 1px solid $baseColor
   padding cw(35) cw(24) cw(68)
-  max-height: 388px
-  max-width: 20%
+  min-height 388px
+  max-height 388px
+  max-width 20%
   overflow hidden
+  transition all 1s
+  &--scrolled
+    .testimonialsSliderItem__moreBtn
+      display block
+  &--full
+    max-height 500px
+    .testimonialsSliderItem__inner,
+    .testimonialsSliderItem__text
+      max-height 500px
+    .testimonialsSliderItem__moreBtn
+      &:after
+        transform rotate(180deg)
+.testimonialsSliderItem__moreBtn
+  width fit-content
+  display none
+  padding-top 8px
+  padding-right 30px
+  fz(18)
+  line-height (23/18)
+  color $baseColor
+  cursor pointer
+  position relative
+  &:after
+    position absolute
+    content url('../images/arrows/arrow-down1.svg')
+    right 0
+    bottom  0
+    // width 30px
+    // height 30px
 .testimonialsSliderItem__inner
   max-height: 28.5rem
+  transition all 1s
 .testimonialsSliderItem__title
   fz(21)
   line-height (27/21)
   margin-bottom cw(35)
 .testimonialsSliderItem__text
-  max-height: 13.8rem
+  max-height: 13.4rem
   font-size 1.8rem
   line-height 2.3rem
   overflow hidden
+  margin-bottom 28px
+  transition all 1s
   // text-overflow ellipsis
   
 .testimonialsSliderItemImages
   display flex
-  padding-top cw(28)
+  // padding-top cw(28)
   img
     display block
     max-width: 57px;
