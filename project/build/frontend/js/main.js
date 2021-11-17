@@ -32,18 +32,23 @@ window.onload = function() {
 
   function chechTestimonial (thisBlock) {
     var thisBlockText = thisBlock.find('.testimonialsSliderItem__text')
-    if (thisBlockText.prop('scrollHeight') > $(".testimonialsSliderItem__text").height() ) {
+    // var a = thisBlockText.prop('scrollHeight');
+    // var b = $(".testimonialsSliderItem__text").height()
+    // var c = $(".testimonialsSliderItem__text").height() + 10
+    if (thisBlockText.prop('scrollHeight') > ($(".testimonialsSliderItem__text").height()) + 10 ) {
       //this element is overflowing on the y axis
       thisBlock.addClass('testimonialsSliderItem--scrolled')
-      console.log('overflowen')
+      // console.log('overflowen')
+      // console.log('this = ', thisBlockText)
+      // console.log('a = ', a, 'b = ', b, 'c = ', c)
     } else {
-      console.log('no-overflow')
+      // console.log('no-overflow')
     }
   }
 
   function showMore () {
     $('.testimonialsSliderItem__moreBtn').on('click', function(){
-      console.log('show more');
+      // console.log('show more');
       $(this).closest('.testimonialsSliderItem').toggleClass('testimonialsSliderItem--full');
       console.log($(this).closest('.testimonialsSliderItem'))
     });
@@ -66,20 +71,76 @@ window.onload = function() {
   }
 
   function countVisibleCharacters(element) {
-    var text = $('.testimonialsSliderItem__text');
-    var r = 0;
-    element.removeChild(element.firstChild);
-    for(var i = 0; i < text.length; i++) {
+    // console.log('element.length', element.length)
+    // console.log('element', element)
+    // console.log(element[3], 'extra')
+    // for (var key in element) {
+    for (var i = 0; i < element.length; i++) {
+      // console.log('1')
+      // console.log('element.length2', element.length)
+      var thisEl = element[i];
+      var height = thisEl.offsetHeight - 5;
+      console.log('height', height)
+      // console.log('thisEl', thisEl)
+      // for el
+      // console.log(element.offsetHeight)
+      var text = thisEl.textContent;
+      // var height = thisEl.offsetHeight
+      var r = 0;
+      // console.log(thisEl)
+      // console.log('text', text)
+      // var height = thisEl.offsetHeight;
+      thisEl.innerHTML = "";
+      // element.removeChild(element.firstChild);
+      // console.log(text.length)
+      // console.log(thisEl)
+      // console.log(thisEl)
+      // console.log(height, 'height')
+      var extra = ''
+      for(var j = 0; j < text.length; j++) {
         var newNode = document.createElement('span');
-        newNode.appendChild(document.createTextNode(text.charAt(i)));
-        element.appendChild(newNode);
-
-        if(newNode.offsetLeft < element.offsetWidth) {
-            r++;
+        var x = text.charAt(j);
+        newNode.append(document.createTextNode(text.charAt(j)));
+        thisEl.append(newNode);
+        // var height = thisEl.offsetHeight;
+        console.log(newNode, 'newNode')
+        console.log(newNode.parentNode, 'newNode.parentNode')
+        console.log(newNode.offsetTop, 'newNode.offsetTop')
+        
+        if(newNode.offsetTop > (height)) {
+          r++;
+          extra += x
+          console.log(x)
+          // console.log(newNode, 'newNode')
+          // console.log(newNode.offsetTop, 'newNode.offsetTop')
         }
+      }
+      console.log('r', r)
+      // return r;
     }
-    return r;
+    console.log('extra', extra)
+    console.log('element', element)
   }
+
+  // function countVisibleCharacters2(elements) {
+  //   elements.each(
+  //     function(){
+  //       console.log('test2')
+  //     }
+  //   )
+  // }
+
+  // function countVisibleCharacters2(elements) {
+  //   elements.each( function() {
+  //     console.log(this)
+  //   });
+  // };
+
+  // function countVisibleCharacters3(elements) {
+  //   for (var i = 0; i < elements.length; i++) {
+  //     console.log(elements[i].offsetHeight)
+  //   }
+  // }
 
   
 
@@ -90,7 +151,11 @@ window.onload = function() {
   productWishlist();
   // testimonials();
   testimonials();
-  // countVisibleCharacters();
+  // countVisibleCharacters($('.testimonialsSliderItem__text--test'));
+  // countVisibleCharacters2($('.testimonialsSliderItem__text--test'));
+  // countVisibleCharacters3($('.testimonialsSliderItem__text--test'));
+  
+  
   
   // BusinessCardDecor();
 

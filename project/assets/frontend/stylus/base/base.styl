@@ -277,13 +277,16 @@ a
   padding-bottom cw(136)
 .testimonialsBlock__title
   margin-bottom cw(115)
-  
+
+.testimonialsSlider
+  margin 0 -20px
 .testimonialsSliderItem
   border 1px solid $baseColor
-  padding cw(35) cw(24) cw(68)
+  padding cw(35) cw(20) cw(68)
   min-height 388px
   max-height 388px
-  max-width 20%
+  // max-width 20%
+  margin 0 10px
   overflow hidden
   transition all 1s
   &--scrolled
@@ -321,12 +324,26 @@ a
   fz(21)
   line-height (27/21)
   margin-bottom cw(35)
+  display flex
+  justify-content space-between
+.testimonialsSliderItemTitle__name
+  fz(21)
+  line-height (27/21)
+.testimonialsSliderItemTitle__date
+  fz(15)
+  line-height (19/15)
+  color $baseColor
+  position relative
+  top -15px
+.testimonialsSliderItem__text__wrapper
+  margin-bottom 28px
 .testimonialsSliderItem__text
-  max-height: 13.4rem
+  position relative
+  max-height: 13.8rem
   font-size 1.8rem
   line-height 2.3rem
   overflow hidden
-  margin-bottom 28px
+  // margin-bottom 28px
   transition all 1s
   // text-overflow ellipsis
   
