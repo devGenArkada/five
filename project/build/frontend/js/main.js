@@ -64,96 +64,87 @@ window.onload = function() {
 
 
   function testimonialsSlider() {
-    $('.testimonialsSlider').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1
-    });
+    var slidesToScrollValue = 4;
+    sliderPagination();
+    sliderInitialization();
+
+    function sliderInitialization () {
+      $('.testimonialsSlider').slick({
+        slidesToShow: 4,
+        slidesToScroll: slidesToScrollValue,
+        prevArrow: "<div class='testimonialsSlider__btn testimonialsSlider__btn--prev'></div>",
+        nextArrow: "<div class='testimonialsSlider__btn testimonialsSlider__btn--next'></div>",
+      });
+    }
+
+    function sliderPagination () {
+      var $status = $('.pagingInfoText');
+      var $slickElement = $('.testimonialsSlider');
+    
+      $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+        var slickSlideCount = slick.slideCount;
+        var slickSlideCountValue = slickSlideCount
+        var slideCount = 0;
+        while (slickSlideCountValue > 0) {
+          slickSlideCountValue = slickSlideCountValue -  slidesToScrollValue;
+          slideCount++
+        }
+        //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+        // var i = (currentSlide ? currentSlide : 0) + 1;
+        var i = (currentSlide ? (currentSlide/slidesToScrollValue) : 0) + 1;
+        $status.text('' + i + '/' + '' + slideCount);
+        $('.pagingInfoBlockItems__item').css({width: `${100/slideCount}%`, left: `${ ((i-1)*100) / slideCount }%`})
+      });
+    }
   }
 
+
+
+
   function countVisibleCharacters(element) {
-    // console.log('element.length', element.length)
-    // console.log('element', element)
-    // console.log(element[3], 'extra')
-    // for (var key in element) {
     for (var i = 0; i < element.length; i++) {
-      // console.log('1')
-      // console.log('element.length2', element.length)
       var thisEl = element[i];
       var height = thisEl.offsetHeight - 5;
-      console.log('height', height)
-      // console.log('thisEl', thisEl)
-      // for el
-      // console.log(element.offsetHeight)
+      // console.log('height', height)
       var text = thisEl.textContent;
-      // var height = thisEl.offsetHeight
       var r = 0;
-      // console.log(thisEl)
-      // console.log('text', text)
-      // var height = thisEl.offsetHeight;
       thisEl.innerHTML = "";
-      // element.removeChild(element.firstChild);
-      // console.log(text.length)
-      // console.log(thisEl)
-      // console.log(thisEl)
-      // console.log(height, 'height')
       var extra = ''
       for(var j = 0; j < text.length; j++) {
         var newNode = document.createElement('span');
         var x = text.charAt(j);
         newNode.append(document.createTextNode(text.charAt(j)));
         thisEl.append(newNode);
-        // var height = thisEl.offsetHeight;
-        console.log(newNode, 'newNode')
-        console.log(newNode.parentNode, 'newNode.parentNode')
-        console.log(newNode.offsetTop, 'newNode.offsetTop')
+        // console.log(newNode, 'newNode')
+        // console.log(newNode.parentNode, 'newNode.parentNode')
+        // console.log(newNode.offsetTop, 'newNode.offsetTop')
         
         if(newNode.offsetTop > (height)) {
           r++;
           extra += x
-          console.log(x)
-          // console.log(newNode, 'newNode')
-          // console.log(newNode.offsetTop, 'newNode.offsetTop')
+          // console.log(x)
         }
       }
-      console.log('r', r)
+      // console.log('r', r)
       // return r;
     }
-    console.log('extra', extra)
-    console.log('element', element)
+    // console.log('extra', extra)
+    // console.log('element', element)
   }
 
-  // function countVisibleCharacters2(elements) {
-  //   elements.each(
-  //     function(){
-  //       console.log('test2')
-  //     }
-  //   )
-  // }
-
-  // function countVisibleCharacters2(elements) {
-  //   elements.each( function() {
-  //     console.log(this)
-  //   });
-  // };
-
-  // function countVisibleCharacters3(elements) {
-  //   for (var i = 0; i < elements.length; i++) {
-  //     console.log(elements[i].offsetHeight)
-  //   }
-  // }
 
   
 
 
 
   // mobileMenu();
+  // sliderPagination();
   testimonialsSlider();
   productWishlist();
   // testimonials();
   testimonials();
-  // countVisibleCharacters($('.testimonialsSliderItem__text--test'));
-  // countVisibleCharacters2($('.testimonialsSliderItem__text--test'));
-  // countVisibleCharacters3($('.testimonialsSliderItem__text--test'));
+  // countVisibleCharacters($('.testimonialsSliderItem__text'));
+
   
   
   

@@ -278,11 +278,36 @@ a
 .testimonialsBlock__title
   margin-bottom cw(115)
 
+.testimonialsBlockSliderWrapper
+  position relative
+  .pagingInfoBlock
+    position absolute
+    left 0
+    bottom -80px
+    display flex
+    align-items center
+    fz(23)
+    line-height (30/23)
+    color $baseColor
+  .pagingInfoBlockItems
+    position relative
+    width cw(250)
+    margin-right cw(20)
+    height 1px
+    background #939393
+  .pagingInfoBlockItems__item
+    position absolute
+    right 0
+    left 50%
+    height 100%
+    background #000
+    transition all .2s
 .testimonialsSlider
-  margin 0 -20px
+  margin 0 -10px
+  position relative
 .testimonialsSliderItem
   border 1px solid $baseColor
-  padding cw(35) cw(20) cw(68)
+  padding cw(35) cw(16) cw(68)
   min-height 388px
   max-height 388px
   // max-width 20%
@@ -360,6 +385,26 @@ a
     &:last-child
       margin-right 0
   // overflow: hidden
+
+.testimonialsSlider__btn
+  z-index 12
+  position absolute
+  // right 0
+  bottom -70px
+  width 102px
+  height 8px
+  // background red
+  background-image url('../images/arrows/arrow-right1.svg')
+  background-size contain
+  background-position right center
+  background-size no-repeat
+  cursor pointer
+  &--prev
+    right 193px
+    transform rotate(180deg)
+  &--next
+    right 10px
+
   
 
 
