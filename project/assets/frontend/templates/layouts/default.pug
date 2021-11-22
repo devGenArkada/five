@@ -5,7 +5,9 @@ doctype html
 html
   include ../partials/head
   body
-    include ../partials/header
-    block content
-    include ../partials/footer
+    .page
+      include ../partials/header
+      main
+        block content
+      include ../partials/footer
     block scripts
