@@ -412,11 +412,52 @@ a
   &--next
     right 10px
 
-  
+// index page styles end
+
+// shop page styles start
+.shopSection
+  wrapper()
+  display flex
+  justify-content space-between
+  padding-top cw(48)
+  color $baseColor
+.shopSidebar
+  padding-right cw(85)
+  padding-top cw(62)
+.shopSidebar__categoriesBlock
+  margin-bottom cw(40)
+.shopSidebar__title
+  fz(22)
+  margin-bottom cw(30)
+.shopSidebarForm__item
+  margin-bottom cw(40)
+.shopSidebarCategoriesList
+  li
+    fz(18)
+    line-height (23/18)
+    margin-bottom cw(14)
+    a
+      color #6D6D6D
+      &.active
+        color $baseColor
+      @media(min-width: 992px)
+        &:hover 
+          text-decoration underline
+.shopSectionCatalogBlockSorting
+  margin-bottom cw(49)
+  text-align right
+  fz(18)
+  line-height (23/18)
+  color $baseColor
+
+.shopSectionCatalog
+  display grid
+  grid-template-columns 1fr 1fr 1fr
+  grid-column-gap cw(20)
+  grid-row-gap cw(87)
 
 
 
 
 
-
-  // index page styles end
+// shop page styles end
