@@ -98,6 +98,10 @@ window.onload = function() {
     }
   }
 
+  function myRangeSlider () {
+    $(".js-range-slider").ionRangeSlider();
+  }
+
 
 
 
@@ -145,14 +149,18 @@ window.onload = function() {
   testimonials();
   // countVisibleCharacters($('.testimonialsSliderItem__text'));
 
-  
-  
-  
+  if ($(".js-range-slider").length) {
+    myRangeSlider();
+  }
+
+
   // BusinessCardDecor();
 
   if ($(window).width() > 768 && $(".businessCardBlock__textContent").length) {
     businessCardDecor();
   }
+
+  
 };
 
 

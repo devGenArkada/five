@@ -9,24 +9,39 @@
           a(href="shop.html") Другая категория
     .shopSidebar__formBlock 
       form.shopSidebar__form.shopSidebarForm(action="#")
-        .shopSidebarForm__item
+        .shopSidebarForm__item.shopSidebarForm__item--color
           .shopSidebar__colorTitle.shopSidebar__title Цвет
-          .shopSidebarForm__inputsBox
-            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black")
-            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black")
-            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black")
+          .shopSidebarForm__inputsBox.shopSidebarForm__inputsBox--color
+            input.shopSidebarForm__inputColor#black(type="checkbox", name="black", value="black", checked, style="background:#393939")
+            label(for="black") 
+            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black", style="background:#eee")
+            input.shopSidebarForm__inputColor(type="checkbox", name="red", value="red", style="background:#F02424")
+            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black", style="background:#6158CE")
+            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black", checked, style="background:#36B943")
+            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black", checked, style="background:#FDC7C7")
+            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black", checked, style="background:#FF9330")
+            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black", style="background:#FFE6A7")
+            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black", style="background:#CFCFCF")
+            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black", style="background:#AF4205")
         .shopSidebarForm__item
           .shopSidebar__colorTitle.shopSidebar__title Размер
-          .shopSidebarForm__inputsBox
-            input.shopSidebarForm__inputColor(type="checkbox", name="42", value="42")
-            input.shopSidebarForm__inputColor(type="checkbox", name="42", value="42")
-            input.shopSidebarForm__inputColor(type="checkbox", name="42", value="42")
+          .shopSidebarForm__inputsBox.shopSidebarForm__inputsBox--size
+            label
+              input.shopSidebarForm__inputColor(type="checkbox", name="42", value="42", checked)
+              | 42
+            label
+              input.shopSidebarForm__inputColor(type="checkbox", name="44", value="44")
+              | 44
+            label
+              input.shopSidebarForm__inputColor(type="checkbox", name="46", value="46")
+              | 46
+            label
+              input.shopSidebarForm__inputColor(type="checkbox", name="48", value="48")
+              | 48
         .shopSidebarForm__item
           .shopSidebar__colorTitle.shopSidebar__title Цена
-          .shopSidebarForm__inputsBox
-            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black")
-            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black")
-            input.shopSidebarForm__inputColor(type="checkbox", name="black", value="black")
+          .shopSidebarForm__inputsBox.shopSidebarForm__inputsBox--price
+            input.js-range-slider(type="text", name="my_range", value="", data-skin="round", data-type="double", data-min="0", data-max="5000")
   .shopSection__catalogBlock.shopSectionCatalogBlock
     .shopSection__sorting.shopSectionCatalogBlockSorting
       .shopSectionCatalogBlockSorting__box Сортировать по

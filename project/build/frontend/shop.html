@@ -24,6 +24,7 @@
     <link rel="canonical" href="">
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <link href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" rel="stylesheet">
     <link href="css/base.css" rel="stylesheet">
 </head>
 
@@ -75,28 +76,39 @@
                     </div>
                     <div class="shopSidebar__formBlock">
                         <form class="shopSidebar__form shopSidebarForm" action="#">
-                            <div class="shopSidebarForm__item">
+                            <div class="shopSidebarForm__item shopSidebarForm__item--color">
                                 <div class="shopSidebar__colorTitle shopSidebar__title">Цвет</div>
-                                <div class="shopSidebarForm__inputsBox">
-                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black">
-                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black">
-                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black">
+                                <div class="shopSidebarForm__inputsBox shopSidebarForm__inputsBox--color">
+                                    <input class="shopSidebarForm__inputColor" id="black" type="checkbox" name="black" value="black" checked style="background:#393939">
+                                    <label for="black"></label>
+                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black" style="background:#eee">
+                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="red" value="red" style="background:#F02424">
+                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black" style="background:#6158CE">
+                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black" checked style="background:#36B943">
+                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black" checked style="background:#FDC7C7">
+                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black" checked style="background:#FF9330">
+                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black" style="background:#FFE6A7">
+                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black" style="background:#CFCFCF">
+                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black" style="background:#AF4205">
                                 </div>
                             </div>
                             <div class="shopSidebarForm__item">
                                 <div class="shopSidebar__colorTitle shopSidebar__title">Размер</div>
-                                <div class="shopSidebarForm__inputsBox">
-                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="42" value="42">
-                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="42" value="42">
-                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="42" value="42">
+                                <div class="shopSidebarForm__inputsBox shopSidebarForm__inputsBox--size">
+                                    <label>
+                                        <input class="shopSidebarForm__inputColor" type="checkbox" name="42" value="42" checked>42</label>
+                                    <label>
+                                        <input class="shopSidebarForm__inputColor" type="checkbox" name="44" value="44">44</label>
+                                    <label>
+                                        <input class="shopSidebarForm__inputColor" type="checkbox" name="46" value="46">46</label>
+                                    <label>
+                                        <input class="shopSidebarForm__inputColor" type="checkbox" name="48" value="48">48</label>
                                 </div>
                             </div>
                             <div class="shopSidebarForm__item">
                                 <div class="shopSidebar__colorTitle shopSidebar__title">Цена</div>
-                                <div class="shopSidebarForm__inputsBox">
-                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black">
-                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black">
-                                    <input class="shopSidebarForm__inputColor" type="checkbox" name="black" value="black">
+                                <div class="shopSidebarForm__inputsBox shopSidebarForm__inputsBox--price">
+                                    <input class="js-range-slider" type="text" name="my_range" value="" data-skin="round" data-type="double" data-min="0" data-max="5000">
                                 </div>
                             </div>
                         </form>
@@ -407,6 +419,7 @@
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

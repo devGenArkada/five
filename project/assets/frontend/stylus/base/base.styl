@@ -424,14 +424,18 @@ a
 .shopSidebar
   margin-right cw(85)
   padding-top cw(62)
-  min-width 220px
+  // min-width 220px
+  width cw(230)
 .shopSidebar__categoriesBlock
   margin-bottom cw(40)
+  width inherit
 .shopSidebar__title
   fz(22)
   margin-bottom cw(30)
 .shopSidebarForm__item
   margin-bottom cw(40)
+  &--color
+    margin-bottom 25px
 .shopSidebarCategoriesList
   li
     fz(18)
@@ -444,16 +448,91 @@ a
       @media(min-width: 992px)
         &:hover 
           text-decoration underline
+
+// --- checkboxes  ---
+.shopSidebarForm__inputsBox--color 
+  input.shopSidebarForm__inputColor
+    position relative
+    appearance none
+    width cw(27)
+    height cw(27)
+    border-radius 50%
+    border 1px solid transparent
+    background #000
+    margin-right cw(15)
+    margin-bottom cw(15)
+    &:checked
+      &:after
+        position absolute
+        content url('../images/arrows/checkbox-1--white.svg')
+        width 12px
+        height 12px
+        left 50%
+        top 50%
+        transform translate(-50%, -50%)
+.shopSidebarForm__inputsBox--size
+  display flex
+  flex-wrap wrap
+  label
+    fz(17)
+    line-height (22/17)
+    color $baseColor
+    margin-right cw(31)
+    margin-bottom cw(30)
+    display flex
+    align-items center
+  input.shopSidebarForm__inputColor
+    position relative
+    appearance none
+    width cw(21)
+    height cw(21)
+    border 1px solid #000
+    margin-right cw(10)
+    &:checked
+      &:after
+        position absolute
+        content url('../images/arrows/checkbox-2.svg')
+        width 15px
+        height 20px
+        left 50%
+        top 50%
+        transform translate(-50%, -50%)
+.shopSidebarForm__inputsBox--price
+  .irs--round
+    .irs-bar
+      height 1px
+      background $baseColor
+    .irs-line
+      height 1px
+    .irs-handle
+      top 30px
+      background $baseColor
+      border none
+      height 13px
+      width 13px
+      box-shadow none
+    .irs-from,
+    .irs-to
+      color $baseColor
+      background-color transparent
+      fz(15)
+      &:before
+        display none
+
+
 .shopSectionCatalogBlockSorting
   margin-bottom cw(49)
   text-align right
   fz(18)
   line-height (23/18)
   color $baseColor
-
+.shopSectionCatalogBlockSorting__box
+  select
+    border none
+    border-bottom 1px solid $baseColor
 .shopSectionCatalog
   display grid
-  grid-template-columns 1fr 1fr 1fr
+  grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap cw(20)
   grid-row-gap cw(87)
   margin-bottom cw(65)
@@ -480,6 +559,7 @@ a
       border 1px solid transparent
     span
       border-color $baseColor
+
 
 
 
