@@ -50,7 +50,7 @@ window.onload = function() {
     $('.testimonialsSliderItem__moreBtn').on('click', function(){
       // console.log('show more');
       $(this).closest('.testimonialsSliderItem').toggleClass('testimonialsSliderItem--full');
-      console.log($(this).closest('.testimonialsSliderItem'))
+      // console.log($(this).closest('.testimonialsSliderItem'))
     });
   }
 
@@ -150,7 +150,7 @@ window.onload = function() {
   
   // BusinessCardDecor();
 
-  if ($(window).width() > 768) {
+  if ($(window).width() > 768 && $(".businessCardBlock__textContent").length) {
     businessCardDecor();
   }
 };

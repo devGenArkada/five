@@ -422,8 +422,9 @@ a
   padding-top cw(48)
   color $baseColor
 .shopSidebar
-  padding-right cw(85)
+  margin-right cw(85)
   padding-top cw(62)
+  min-width 220px
 .shopSidebar__categoriesBlock
   margin-bottom cw(40)
 .shopSidebar__title
@@ -455,7 +456,30 @@ a
   grid-template-columns 1fr 1fr 1fr
   grid-column-gap cw(20)
   grid-row-gap cw(87)
-
+  margin-bottom cw(65)
+.shopSectionPagination
+  margin-bottom cw(136)
+.shopSectionPagination__list
+  display flex
+  li
+    margin-right cw(14)
+    &:last-child
+      margin-right 0
+    a,
+    span
+      display flex
+      align-items center
+      justify-content center
+      fz(20)
+      line-height (25/20)
+      font-family $fontMd
+      font-weight 500
+      color $baseColor
+      width cw(35)
+      height cw(35)
+      border 1px solid transparent
+    span
+      border-color $baseColor
 
 
 
