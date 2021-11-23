@@ -1,5 +1,6 @@
 'use strict';
 
+
 const gulp = require('gulp');
 
 function lazeRequireTask(taskName, path, options) {
@@ -82,8 +83,8 @@ gulp.task('build', gulp.series(
     gulp.parallel('styles', 'scripts'),
     'pug',
     gulp.parallel('copy:files', 'copy:img'),
-    'mincss',
-    'minjs'
+    'mincss'
+    // 'minjs'
 ));
 
 gulp.task('dev', gulp.series(
