@@ -560,8 +560,155 @@ a
     span
       border-color $baseColor
 
-
-
-
-
 // shop page styles end
+
+
+// product page styles start
+.productBoxBlock
+  wrapper()
+  padding-top cw(35)
+  margin-bottom cw(70)
+.productBoxBlock__navLinkBlock
+  text-align right
+  margin-bottom cw(35)
+  fz(20)
+  line-height (26/20)
+  color $baseColor
+.productBox
+  width 95%
+  display flex
+.productBoxProductImages
+  width 52%
+  display flex
+  justify-content space-between
+  align-items stretch
+.productBoxProductSlider
+  align-self auto
+  // width 15%
+  width 82px
+  padding-top cw(57)
+  padding-bottom cw(57)
+  margin-top cw(-17)
+  margin-bottom cw(-17)
+.productBoxProductSlider__item
+  margin-top cw(17)
+  margin-bottom cw(17)
+  // max-width cw(82)
+  // max-height cw(111)
+  cursor pointer
+  &--current
+    border 1px solid $baseColor !important
+  img
+    display block
+    object-fit cover
+    width 100%
+    height auto    
+.productBoxProductSlider__btn 
+  cursor pointer
+  position absolute
+  left 50%
+  &--prev
+    top cw(15)
+    transform translateX(-50%) rotate(180deg)
+  &--next
+    bottom cw(15)
+    transform translateX(-50%)
+  &.slick-disabled
+    path
+      fill #B9B9B9
+  // path
+  //   transition all .3s
+  // &:hover
+  //   path
+  //     fill $baseColor
+
+.productBoxProductImages__mainPhoto
+  width 82%
+  img
+    display block
+    width 100%
+    height 100%
+    object-fit cover
+
+.productBoxContent
+  margin-left cw(59)
+  width 48%
+.productBoxContent__productCode
+  font-family $fontLight
+  fz(18)
+  line-height (23/18)
+  color #979797
+  margin-bottom cw(34)
+.productBoxContent__productTitle
+  fz(23)
+  line-height (30/23)
+  clear $baseColor
+  margin-bottom cw(34)
+.productBoxContent__productPrice
+  margin-bottom cw(36)
+.productBoxContentSizes
+  display flex
+  margin-bottom cw(21)
+.productBoxContentSizes__item
+  margin-right 10px
+  fz(17)
+  line-height (22/17)
+  text-transform uppercase
+  color $baseColor
+  padding cw(7) cw(23)
+  border 1px solid $baseColor
+  cursor pointer
+  &--current
+    background $baseColor
+    color #FFF
+.productBoxVariationsBlockSlider
+  margin 0 cw(-7)
+.productBoxVariationsBlockSlider__item
+  // max-width cw(82)
+  margin-left cw(7)
+  margin-right cw(7)
+  // max-height cw(111)
+  &--current
+    border 1px solid $baseColor
+  img
+    display block
+    width 100%
+    height 100%
+    object-fit cover
+.productBoxContent__table
+  font-family $fontLight
+  fz(18)
+  line-height (23/18)
+  color #979797
+  cursor pointer
+  margin-bottom cw(36)
+.productBoxVariationsBlockHead
+  display flex
+.productBoxVariationsBlockHead__title
+  fz(22)
+  line-height (28/22)
+  color $baseColor
+  margin-bottom cw(35)
+  margin-right cw(19)
+.productBoxVariationsBlockHead__circle
+  width cw(27)
+  height cw(27)
+  border-radius 50%
+.productBoxVariationsBlockSlider__btn
+  position absolute
+  top 50%
+  cursor pointer
+  &--prev
+    left cw(-30)
+    transform translateY(-50%) rotate(180deg)
+  &--next
+    right cw(-30)
+    transform translateY(-50%)
+  &.slick-disabled
+    path
+      fill #B9B9B9
+
+
+// product page styles end
+
+
