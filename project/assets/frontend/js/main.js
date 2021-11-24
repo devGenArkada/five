@@ -1,11 +1,19 @@
 'use strict';
 
 window.onload = function() {
+  
 
   function productWishlist() {
-    $('.productCard__wishlistBlock').on('click', function () {
-      $( this ).toggleClass('productCard__wishlistBlock--added');
-    });
+    if ($('.productCard__wishlistBlock').length) {
+      $('.productCard__wishlistBlock, .productBoxButtons__btn--wishlist').on('click', function () {
+        if ($( this ).find('.productCard__wishlistBlock').length) {
+          $( this ).find('.productCard__wishlistBlock').toggleClass('productCard__wishlistBlock--added');      
+        }
+        else {
+          $( this ).toggleClass('productCard__wishlistBlock--added');
+        }
+      });
+    }
   }
 
   function mobileMenu() {
@@ -154,8 +162,21 @@ window.onload = function() {
         if (!($(this).hasClass('productBoxProductSlider__item--current'))) {
           $('.productBoxProductSlider__item--current').removeClass('productBoxProductSlider__item--current');
           $(this).addClass('productBoxProductSlider__item--current');
+          let currentSrc = String($('.productBoxProductSlider__item--current img').attr('src'));
+          $('.productBoxProductImages__mainPhoto img').attr("src", currentSrc);
         }
       });
+    }
+  }
+
+  function popupSize () {
+    if ($('.md-modal')) {
+      $('.popupSizesTrigger').on('click', function () {
+        $('.md-modal').addClass('md-show')
+      });
+      $('.md-overlay, .md-close').on('click', function () {
+        $('.md-modal').removeClass('md-show');
+      })
     }
   }
 
@@ -182,12 +203,27 @@ window.onload = function() {
     }
   }
 
+  function productVariationsSliderCurrentSlide () {
+    if ($('.productBoxVariationsBlockSlider').length) {
+      $('.productBoxVariationsBlockSlider__item').on('click', function () {
+        if (!($(this).hasClass('productBoxVariationsBlockSlider__item--current'))) {
+          $('.productBoxVariationsBlockSlider__item--current').removeClass('productBoxVariationsBlockSlider__item--current');
+          $(this).addClass('productBoxVariationsBlockSlider__item--current')
+        }
+      })
+    }
+  }
+
 
 
 
   
 
 
+
+  ///////////////
+  // All functions go below
+  ///////////////
 
   // mobileMenu();
   if ($('.testimonialsSlider').length) {
@@ -209,8 +245,10 @@ window.onload = function() {
 
   mainProductSlider();
   mainProductSliderCurrentSlide();
+  popupSize();
   currentSize();
   productVariationsSlider();
+  productVariationsSliderCurrentSlide();
 
   
 };

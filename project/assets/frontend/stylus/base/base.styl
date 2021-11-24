@@ -65,6 +65,7 @@ a
   display block
   width 100%
   height auto
+  max-height 500px
   object-fit cover
 .productCard__statuses
   position absolute
@@ -109,6 +110,86 @@ a
     margin-left cw(20)
     text-decoration line-through
     color #949494
+
+.widgetBlockWhatsapp
+  width cw(82)
+  height cw(82)
+  position fixed
+  right 30px
+  bottom 30px
+  background url('../images/icons/widget-whatsapp.svg')
+  cursor pointer
+  transition all .5s
+  @media (min-width 992px)
+    &:hover
+      transform scale(1.1)
+.widgetBlockWhatsapp__link
+  display block
+  width 100%
+  height 100%
+
+// -- modal --
+.md-modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	// width: 50%;
+  width auto
+	// max-width: 630px;
+	min-width: 320px;
+	height: auto;
+	z-index: 2000;
+	visibility: hidden;
+	backface-visibility: hidden;
+	transform: translateX(-50%) translateY(-50%);
+}
+.md-show {
+	visibility: visible;
+}
+.md-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	opacity: 0;
+	background: rgba(68, 67, 63, 0.5);
+	transition: all 0.3s;
+}
+.md-show ~ .md-overlay {
+	opacity: 1;
+	visibility: visible;
+}
+/* Effect 1: Fade in and scale up */
+.md-effect-1 .md-content {
+	transform: scale(0.7);
+	opacity: 0;
+	transition: all 0.3s;
+}
+.md-show.md-effect-1 .md-content {
+	transform: scale(1);
+	opacity: 1;
+}
+// --- custom modal styles ---
+.md-content
+  background-color #fff
+  padding 50px 25px 25px
+  border-radius 12px
+.md-close {
+	position absolute
+	top 10px
+	right 10px
+	background-color rgba(0, 0, 0, 0.1)
+	border: none;
+	border-radius 5px
+	font-size 1.35em
+	cursor pointer
+	width 30px
+	height 30px
+}
+    
 // end of common styles
 
 
@@ -230,8 +311,10 @@ a
   line-height (27/21)
   color $baseColor
   transition: all .3s
-  &:hover
-    background-color #d5d5d5
+  @media (min-width 992px)
+    &:hover
+      background-color $baseColor
+      color #fff
 .feedBackBlock
   background-color $baseColor
   padding-top cw(70)
@@ -276,7 +359,8 @@ a
     transition: all .3s
     @media(min-width: 992px)
       &:hover
-        background-color: #222
+        background-color: #fff
+        color $baseColor
 
 .testimonialsBlock
   wrapper()
@@ -567,23 +651,39 @@ a
 .productBoxBlock
   wrapper()
   padding-top cw(35)
-  margin-bottom cw(70)
+  margin-bottom cw(126)
 .productBoxBlock__navLinkBlock
   text-align right
   margin-bottom cw(35)
+.productBoxBlock__navLink
   fz(20)
   line-height (26/20)
   color $baseColor
+  text-transform uppercase
+  position relative
+  padding-left cw(17)
+  @media(min-width:992px)
+    &:hover
+      text-decoration underline
+  &::before
+    position absolute
+    content url('../images/arrows/arrow-right1.svg')
+    left 0
+    top 50%
+    transform translate(-100%, -50%) rotate(180deg)
 .productBox
   width 95%
   display flex
+  flex-wrap wrap
+  margin-bottom cw(70)
 .productBoxProductImages
   width 52%
   display flex
   justify-content space-between
   align-items stretch
+  margin-bottom cw(70)
 .productBoxProductSlider
-  align-self auto
+  align-self flex-start
   // width 15%
   width 82px
   padding-top cw(57)
@@ -595,6 +695,7 @@ a
   margin-bottom cw(17)
   // max-width cw(82)
   // max-height cw(111)
+  border 1px solid transparent
   cursor pointer
   &--current
     border 1px solid $baseColor !important
@@ -629,10 +730,12 @@ a
     width 100%
     height 100%
     object-fit cover
+    max-height 800px
 
 .productBoxContent
-  margin-left cw(59)
+  padding-left cw(59)
   width 48%
+  margin-bottom cw(70)
 .productBoxContent__productCode
   font-family $fontLight
   fz(18)
@@ -661,17 +764,22 @@ a
   &--current
     background $baseColor
     color #FFF
+.productBoxVariationsBlock
+  margin-bottom cw(51)
 .productBoxVariationsBlockSlider
   margin 0 cw(-7)
 .productBoxVariationsBlockSlider__item
   // max-width cw(82)
   margin-left cw(7)
   margin-right cw(7)
+  cursor pointer
   // max-height cw(111)
+  border 1px solid transparent
   &--current
     border 1px solid $baseColor
   img
     display block
+    max-height 150px
     width 100%
     height 100%
     object-fit cover
@@ -707,7 +815,62 @@ a
   &.slick-disabled
     path
       fill #B9B9B9
+.productBoxButtons__line
+  display flex
+  margin-bottom cw(35)
+.productBoxButtons__btn
+  fz(19)
+  line-height (25/19)
+  color $baseColor
+  background transparent
+  border 1px solid $baseColor
+  padding cw(16) cw(24)
+  width fit-content
+  cursor pointer
+  & + .productBoxButtons__btn
+    margin-left cw(22)
+  &--wishlist
+    border-color transparent
+    display flex
+    padding-left 0
+    .productCard__wishlistBlock
+      position static
+      margin-right cw(15)
+button.productBoxButtons__btn,
+a.productBoxButtons__btn
+  transition all .3s
+  @media (min-width 992px)
+    &:hover
+      background-color $baseColor
+      color #fff
+.productBoxDesc
+  padding-left cw(102)
+.productBoxDesc__title
+  margin-bottom cw(50)
+.productBoxDesc__desc
+  font-family $fontLight
+  fz(20)
+  line-height (26/20)
+  color $baseColor
+  p
+    margin-bottom cw(30)
 
+.recommendedBlock
+  wrapper()
+  margin-bottom cw(126)
+.recommendedBlockItemsBox
+  display flex
+  justify-content space-between
+.recommendedBlock__title
+  margin-bottom cw(70)
+  .blockTitleBox__title
+    margin-left auto
+    padding-right 0
+    padding-left cw(62)
+.recommendedBlockItemsBox__item
+  width 23.75%
+  // & + .recommendedBlockItemsBox__item
+  //   margin-left cw(20)
 
 // product page styles end
 
