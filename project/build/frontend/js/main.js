@@ -237,6 +237,24 @@ window.onload = function() {
     });
   }
 
+  function productQuantityCounter () {
+    if ($('.productsTableItemQuantityBlock').length) {
+      let counter = $('.productsTableItemQuantityBlock__num').val();
+      $('.productsTableItemQuantityBlock__btn--minus').on('click', function () {
+        if (counter > 1) {
+          counter--
+          $('.productsTableItemQuantityBlock__num').val(counter)
+        }
+      })
+      $('.productsTableItemQuantityBlock__btn--plus').on('click', function () {
+        if (counter < 99) {
+          counter++
+          $('.productsTableItemQuantityBlock__num').val(counter)
+        }
+      })
+    }
+  }
+
 
 
 
@@ -274,6 +292,7 @@ window.onload = function() {
   productVariationsSliderCurrentSlide();
   firstVisitModal();
   firstVisitModalCookie();
+  productQuantityCounter();
 
   
 };

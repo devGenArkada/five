@@ -1,4 +1,36 @@
-div checkout page content
+.breadcrumbs
+  ul.breadcrumbs__list 
+    li
+      a(href="cart.html") Корзина
+    li.breadcrumbs__item--current
+      span Доставка и оплата
+    li
+      a(href="#") Подтверждение
+.checkoutBlock
+  form.checkoutBlock__form.checkoutForm(action="#")
+    .checkoutForm__first
+      .checkoutForm__block 
+        .checkoutForm__title Покупатель
+          input.checkoutForm__input(type="email")
+          input.checkoutForm__input(type="text")
+          input.checkoutForm__input(type="tel")
+      .checkoutForm__block 
+        .checkoutForm__title Адрес доставки
+          input.checkoutForm__input(type="text")
+          input.checkoutForm__input(type="text")
+          input.checkoutForm__input(type="text")
+          .checkoutForm__inputsBlock
+            input(type="checkbox", id="takeSelf", checked)
+            label(for="takeSelf") Заберу самостоятельно по адресу г. Краснодар, ул.
+            input.checkoutForm__inputTextRow(type="text")
+      .checkoutForm__block 
+        .checkoutForm__title Способ оплаты
+        label Оплата картой на сайте
+          input(type="checkbox", checked)
+        label Оплата при получении
+          input(type="checkbox")
+    .checkoutForm__second
+    
 
 .modalFirstVisit
   .modalFirstVisit__content 

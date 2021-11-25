@@ -49,7 +49,7 @@
                 </nav>
                 <div class="headerInner__userBlock headerInnerUserBlock">
                     <div class="headerInnerUserBlock__wishlist headerInnerUserBlockWishlist">
-                        <a href="#">
+                        <a href="wishlist.html">
                             <img src="images/icons/wishlist-icon.svg" alt="">
                         </a>
                     </div>
@@ -63,7 +63,58 @@
             </div>
         </header>
         <main>
-            <div>cart page content</div>
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item--current"><span>Корзина</span>
+                    </li>
+                    <li><a href="checkout.html">Доставка и оплата</a>
+                    </li>
+                    <li><a href="#">Подтверждение</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cartBlock productsTableBlock">
+                <div class="productsTableBlock__table productsTable">
+                    <div class="productsTable__item productsTableItem">
+                        <div class="productsTableItem__photo">
+                            <img src="images/products/product2.jpg" alt="">
+                        </div>
+                        <div class="productsTableItem__content">
+                            <div class="productsTableItem__title">Спортивный костюм оверсайз с брюками <span>(небесный голубой / 42) </span>
+                            </div><a class="productsTableItem__btn" href="#">Удалить</a>
+                        </div>
+                        <div class="productsTableItem__quantity">
+                            <div class="productsTableItemQuantityBlock">
+                                <button class="productsTableItemQuantityBlock__btn productsTableItemQuantityBlock__btn--minus"></button>
+                                <input class="productsTableItemQuantityBlock__num" type="number" value="1" readonly>
+                                <button class="productsTableItemQuantityBlock__btn productsTableItemQuantityBlock__btn--plus"></button>
+                            </div>
+                        </div>
+                        <div class="productsTableItem__price">3 000 ₽</div>
+                    </div>
+                    <div class="productsTable__item productsTableItem">
+                        <div class="productsTableItem__photo">
+                            <img src="images/products/product4.jpg" alt="">
+                        </div>
+                        <div class="productsTableItem__content">
+                            <div class="productsTableItem__title">Спортивный костюм с шортами <span>(бежевый / 46) </span>
+                            </div><a class="productsTableItem__btn" href="#">Удалить</a>
+                        </div>
+                        <div class="productsTableItem__quantity">
+                            <div class="productsTableItemQuantityBlock">
+                                <button class="productsTableItemQuantityBlock__btn productsTableItemQuantityBlock__btn--minus"></button>
+                                <input class="productsTableItemQuantityBlock__num" type="number" value="1" readonly>
+                                <button class="productsTableItemQuantityBlock__btn productsTableItemQuantityBlock__btn--plus"></button>
+                            </div>
+                        </div>
+                        <div class="productsTableItem__price">3 000 ₽</div>
+                    </div>
+                </div>
+                <div class="productsTableBlock__total productsTableBlockTotal">
+                    <div class="productsTableBlockTotal__sum">Сумма:<span>5 700 ₽ </span>
+                    </div><a class="productsTableBlockTotal__link" href="checkout.html">Оформить заказ</a>
+                </div>
+            </div>
             <div class="modalFirstVisit">
                 <div class="modalFirstVisit__content">
                     <div class="modalFirstVisit__inner">

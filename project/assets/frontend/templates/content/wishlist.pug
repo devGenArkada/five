@@ -1,4 +1,52 @@
-div wishlist page content
+.wishlistPageTitle Понравившиеся товары
+.cartBlock.productsTableBlock
+  .productsTableBlock__table.productsTable
+    .productsTable__item.productsTableItem
+      .productsTableItem__photo 
+        img(src="images/products/product2.jpg", alt="")
+      .productsTableItem__content 
+        .productsTableItem__title Спортивный костюм оверсайз с брюками 
+          span (небесный голубой / 42) 
+        a.productsTableItem__btn.productsTableItem__btn--add(href="#") Переместить в корзину
+          span 
+            <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.522853 1.77821e-05C0.234081 1.77821e-05 0 0.246261 0 0.550018C0 0.853775 0.234081 1.10002 0.522853 1.10002H3.23516L5.98829 14.7985C5.96022 15.1118 6.23683 15.4158 6.53567 15.4H19.607C19.8832 15.4042 20.1373 15.1407 20.1373 14.85C20.1373 14.5594 19.8832 14.2959 19.607 14.3H6.96049L6.51933 12.1H20.6527C20.8868 12.0973 21.108 11.9106 21.1592 11.6703L22.9892 3.42033C23.0572 3.10113 22.7937 2.75236 22.4827 2.75002H4.64032L4.17467 0.429705C4.12285 0.186611 3.8968 -0.00210797 3.65997 1.77821e-05H0.522853ZM4.86092 3.85002H21.8291L20.2361 11H6.29876L4.86092 3.85002ZM9.41136 17.05C8.11814 17.05 7.05852 18.1646 7.05852 19.525C7.05852 20.8854 8.11814 22 9.41136 22C10.7046 22 11.7642 20.8854 11.7642 19.525C11.7642 18.1646 10.7046 17.05 9.41136 17.05ZM16.7313 17.05C15.4381 17.05 14.3785 18.1646 14.3785 19.525C14.3785 20.8854 15.4381 22 16.7313 22C18.0246 22 19.0842 20.8854 19.0842 19.525C19.0842 18.1646 18.0246 17.05 16.7313 17.05V17.05ZM9.41136 18.15C10.1395 18.15 10.7185 18.7591 10.7185 19.525C10.7185 20.2909 10.1395 20.9 9.41136 20.9C8.68329 20.9 8.10423 20.2909 8.10423 19.525C8.10423 18.7591 8.68329 18.15 9.41136 18.15ZM16.7313 18.15C17.4594 18.15 18.0384 18.7591 18.0384 19.525C18.0384 20.2909 17.4594 20.9 16.7313 20.9C16.0032 20.9 15.4242 20.2909 15.4242 19.525C15.4242 18.7591 16.0032 18.15 16.7313 18.15Z" fill="#979797"/>
+            </svg>
+        a.productsTableItem__btn(href="#") Удалить
+      .productsTableItem__quantity
+        .productsTableItemQuantityBlock
+          button.productsTableItemQuantityBlock__btn.productsTableItemQuantityBlock__btn--minus
+          input.productsTableItemQuantityBlock__num(type="number", value="1", readonly)
+          button.productsTableItemQuantityBlock__btn.productsTableItemQuantityBlock__btn--plus
+      .productsTableItem__price 3 000 ₽ 
+    .productsTable__item.productsTableItem
+      .productsTableItem__photo 
+        img(src="images/products/product4.jpg", alt="")
+      .productsTableItem__content 
+        .productsTableItem__title Спортивный костюм с шортами 
+          span (бежевый / 46) 
+        a.productsTableItem__btn.productsTableItem__btn--add(href="#") Переместить в корзину
+          span 
+            <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.522853 1.77821e-05C0.234081 1.77821e-05 0 0.246261 0 0.550018C0 0.853775 0.234081 1.10002 0.522853 1.10002H3.23516L5.98829 14.7985C5.96022 15.1118 6.23683 15.4158 6.53567 15.4H19.607C19.8832 15.4042 20.1373 15.1407 20.1373 14.85C20.1373 14.5594 19.8832 14.2959 19.607 14.3H6.96049L6.51933 12.1H20.6527C20.8868 12.0973 21.108 11.9106 21.1592 11.6703L22.9892 3.42033C23.0572 3.10113 22.7937 2.75236 22.4827 2.75002H4.64032L4.17467 0.429705C4.12285 0.186611 3.8968 -0.00210797 3.65997 1.77821e-05H0.522853ZM4.86092 3.85002H21.8291L20.2361 11H6.29876L4.86092 3.85002ZM9.41136 17.05C8.11814 17.05 7.05852 18.1646 7.05852 19.525C7.05852 20.8854 8.11814 22 9.41136 22C10.7046 22 11.7642 20.8854 11.7642 19.525C11.7642 18.1646 10.7046 17.05 9.41136 17.05ZM16.7313 17.05C15.4381 17.05 14.3785 18.1646 14.3785 19.525C14.3785 20.8854 15.4381 22 16.7313 22C18.0246 22 19.0842 20.8854 19.0842 19.525C19.0842 18.1646 18.0246 17.05 16.7313 17.05V17.05ZM9.41136 18.15C10.1395 18.15 10.7185 18.7591 10.7185 19.525C10.7185 20.2909 10.1395 20.9 9.41136 20.9C8.68329 20.9 8.10423 20.2909 8.10423 19.525C8.10423 18.7591 8.68329 18.15 9.41136 18.15ZM16.7313 18.15C17.4594 18.15 18.0384 18.7591 18.0384 19.525C18.0384 20.2909 17.4594 20.9 16.7313 20.9C16.0032 20.9 15.4242 20.2909 15.4242 19.525C15.4242 18.7591 16.0032 18.15 16.7313 18.15Z" fill="#979797"/>
+            </svg>
+        a.productsTableItem__btn(href="#") Удалить
+      .productsTableItem__quantity
+        .productsTableItemQuantityBlock
+          button.productsTableItemQuantityBlock__btn.productsTableItemQuantityBlock__btn--minus
+          input.productsTableItemQuantityBlock__num(type="number", value="1", readonly)
+          button.productsTableItemQuantityBlock__btn.productsTableItemQuantityBlock__btn--plus
+      .productsTableItem__price 3 000 ₽ 
+  .productsTableBlock__total.productsTableBlockTotal
+    .productsTableBlockTotal__sum Сумма:
+      span 5 700 ₽ 
+    a.productsTableBlockTotal__link(href="checkout.html") Переместить все в корзину
+
+
+
+
+
+
 
 
 .modalFirstVisit

@@ -1,4 +1,50 @@
-div cart page content
+.breadcrumbs
+  ul.breadcrumbs__list 
+    li.breadcrumbs__item--current
+      span Корзина
+    li
+      a(href="checkout.html") Доставка и оплата
+    li
+      a(href="#") Подтверждение
+.cartBlock.productsTableBlock
+  .productsTableBlock__table.productsTable
+    .productsTable__item.productsTableItem
+      .productsTableItem__photo 
+        img(src="images/products/product2.jpg", alt="")
+      .productsTableItem__content 
+        .productsTableItem__title Спортивный костюм оверсайз с брюками 
+          span (небесный голубой / 42) 
+        a.productsTableItem__btn(href="#") Удалить
+      .productsTableItem__quantity
+        .productsTableItemQuantityBlock
+          button.productsTableItemQuantityBlock__btn.productsTableItemQuantityBlock__btn--minus
+          input.productsTableItemQuantityBlock__num(type="number", value="1", readonly)
+          button.productsTableItemQuantityBlock__btn.productsTableItemQuantityBlock__btn--plus
+      .productsTableItem__price 3 000 ₽ 
+    .productsTable__item.productsTableItem
+      .productsTableItem__photo 
+        img(src="images/products/product4.jpg", alt="")
+      .productsTableItem__content 
+        .productsTableItem__title Спортивный костюм с шортами 
+          span (бежевый / 46) 
+        a.productsTableItem__btn(href="#") Удалить
+      .productsTableItem__quantity
+        .productsTableItemQuantityBlock
+          button.productsTableItemQuantityBlock__btn.productsTableItemQuantityBlock__btn--minus
+          input.productsTableItemQuantityBlock__num(type="number", value="1", readonly)
+          button.productsTableItemQuantityBlock__btn.productsTableItemQuantityBlock__btn--plus
+      .productsTableItem__price 3 000 ₽ 
+  .productsTableBlock__total.productsTableBlockTotal
+    .productsTableBlockTotal__sum Сумма:
+      span 5 700 ₽ 
+    a.productsTableBlockTotal__link(href="checkout.html") Оформить заказ
+
+
+
+
+
+
+
 
 .modalFirstVisit
   .modalFirstVisit__content 

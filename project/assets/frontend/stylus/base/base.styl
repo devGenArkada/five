@@ -285,6 +285,36 @@ a
       color $baseColor
       border 1px solid $baseColor
 
+.breadcrumbs
+  wrapper()
+  margin-top cw(48)
+  margin-bottom cw(75)
+.breadcrumbs__list
+  display flex
+  li
+    position relative
+    a,
+    span
+      fz(26)
+      line-height (34/26)
+      color #979797
+    a
+      @media (min-width 992px)
+        &:hover
+          text-decoration underline
+          text-underline-offset 2px
+    & + li
+      margin-left cw(48)
+      &::after
+        position absolute
+        content url('../images/arrows/arrow-right3.svg')
+        left cw(-24)
+        top 50%
+        transform translate(-50%, -30%)
+    &.breadcrumbs__item--current
+      a,
+      span
+        color $baseColor
 // end of common styles
 
 
@@ -964,9 +994,140 @@ a.productBoxButtons__btn
     padding-left cw(62)
 .recommendedBlockItemsBox__item
   width 23.75%
-  // & + .recommendedBlockItemsBox__item
-  //   margin-left cw(20)
-
 // product page styles end
 
+// cart page + wishlist page styles start
+       
+.productsTableBlock
+  wrapper()
+  margin-bottom cw(136)
+.productsTable
+  margin-bottom cw(17)
+.productsTableItem
+  display flex
+  align-items center
+  border-bottom 1px solid $baseColor
+  margin-bottom cw(56)
+  padding-bottom cw(43)
+.productsTableItem__photo 
+  width 15%
+  margin-right 8%
+  img
+    display block
+    max-width 100%
+    object-fit contain
+    max-height 250px
+.productsTableItem__content
+  width 35%
+  margin-right 13%
+.productsTableItem__title
+  fz(20)
+  line-height (26/20)
+  color $baseColor
+  margin-bottom cw(20)
+  span
+    white-space nowrap
+.productsTableItem__btn
+  display block
+  width fit-content
+  fz(20)
+  line-height (26/20)
+  color #979797
+  transition all .3s
+    path
+      transition all .3s
+  @media (min-width 992px)
+    &:hover 
+      color $baseColor
+      path
+        fill $baseColor
+  &--add
+    margin-bottom cw(20)
+    display flex
+    align-items center
+    span
+      display flex
+      align-items center
+      margin-left cw(9)
+.productsTableItem__quantity
+  width 16%
+  margin-right 8%
+.productsTableItemQuantityBlock
+  display flex
+  width 202px
+  height 46px
+  border 1px solid $baseColor
+.productsTableItemQuantityBlock__btn
+  height 100%
+  width 25%
+  border none
+  background transparent
+  position relative
+  &--minus,
+  &--plus
+    &::after
+      position absolute
+      content ''
+      left 50%
+      top 50%
+      height 1px
+      width 13px
+      background-color $baseColor
+      transform translate(-50%, -1px)
+  &--plus
+    &::before
+      position absolute
+      content ''
+      left calc(50% + 0.5px)
+      top 50%
+      height 13px
+      width 1px
+      background-color $baseColor
+      transform translate(-1px, -50%)
+.productsTableItemQuantityBlock__num
+  height 100%
+  width 50%
+  border none
+  text-align center
+  fz(20)
+  color $baseColor
+.productsTableItem__price
+  width 7%
+  text-align right
+  font-family $fontMd
+  fz(23)
+  line-height (29/23)
+  color $baseColor
+.productsTableBlockTotal
+  width 30%
+  margin-left auto
+  margin-right 0
+.productsTableBlockTotal__sum
+  fz(25)
+  line-height (32/25)
+  color $baseColor
+  margin-bottom cw(52)
+  span
+    margin-left cw(20)
+    font-family $fontMd
+.productsTableBlockTotal__link
+  display inline-block
+  border 1px solid $baseColor
+  fz(21)
+  line-height (27/21)
+  color $baseColor
+  padding cw(18) cw(47)
+  transition all .3s
+  @media (min-width 992px)
+    &:hover
+      background-color $baseColor
+      color #fff
 
+.wishlistPageTitle
+  wrapper ()
+  margin-top cw(48)
+  margin-bottom cw(75)
+  fz(26)
+  line-height (34/26)
+  color $baseColor
+// cart page + wishlist page styles end

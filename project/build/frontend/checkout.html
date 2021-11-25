@@ -49,7 +49,7 @@
                 </nav>
                 <div class="headerInner__userBlock headerInnerUserBlock">
                     <div class="headerInnerUserBlock__wishlist headerInnerUserBlockWishlist">
-                        <a href="#">
+                        <a href="wishlist.html">
                             <img src="images/icons/wishlist-icon.svg" alt="">
                         </a>
                     </div>
@@ -63,7 +63,51 @@
             </div>
         </header>
         <main>
-            <div>checkout page content</div>
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li><a href="cart.html">Корзина</a>
+                    </li>
+                    <li class="breadcrumbs__item--current"><span>Доставка и оплата</span>
+                    </li>
+                    <li><a href="#">Подтверждение</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="checkoutBlock">
+                <form class="checkoutBlock__form checkoutForm" action="#">
+                    <div class="checkoutForm__first">
+                        <div class="checkoutForm__block">
+                            <div class="checkoutForm__title">Покупатель
+                                <input class="checkoutForm__input" type="email">
+                                <input class="checkoutForm__input" type="text">
+                                <input class="checkoutForm__input" type="tel">
+                            </div>
+                        </div>
+                        <div class="checkoutForm__block">
+                            <div class="checkoutForm__title">Адрес доставки
+                                <input class="checkoutForm__input" type="text">
+                                <input class="checkoutForm__input" type="text">
+                                <input class="checkoutForm__input" type="text">
+                                <div class="checkoutForm__inputsBlock">
+                                    <input type="checkbox" id="takeSelf" checked>
+                                    <label for="takeSelf">Заберу самостоятельно по адресу г. Краснодар, ул.</label>
+                                    <input class="checkoutForm__inputTextRow" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkoutForm__block">
+                            <div class="checkoutForm__title">Способ оплаты</div>
+                            <label>Оплата картой на сайте
+                                <input type="checkbox" checked>
+                            </label>
+                            <label>Оплата при получении
+                                <input type="checkbox">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="checkoutForm__second"></div>
+                </form>
+            </div>
             <div class="modalFirstVisit">
                 <div class="modalFirstVisit__content">
                     <div class="modalFirstVisit__inner">
