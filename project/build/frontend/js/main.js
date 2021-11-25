@@ -218,7 +218,7 @@ window.onload = function() {
     if ($('.modalFirstVisit').length) {
       $('.modalFirstVisit__overlay, .modalFirstVisit__close').on('click', function () {
         $('.modalFirstVisit').removeClass('modalFirstVisit--active');
-        console.log('closed')
+        // console.log('closed')
       });
     }
   }
@@ -227,7 +227,7 @@ window.onload = function() {
     // Проверяем если ли в куках запись, что посетитель уже был
     if (!$.cookie('visited')) {
       $(".modalFirstVisit").addClass('modalFirstVisit--active');
-      console.log('new')
+      // console.log('new')
     }
 
     //создаем куки
@@ -250,6 +250,16 @@ window.onload = function() {
         if (counter < 99) {
           counter++
           $('.productsTableItemQuantityBlock__num').val(counter)
+        }
+      })
+    }
+  }
+
+  function flexibleInput(name) {
+    if($(name).length) {
+      $(name).on('input', function(){
+        if (this.value.length > 5) {
+          this.style.width = this.value.length + "ch";
         }
       })
     }
@@ -293,6 +303,7 @@ window.onload = function() {
   firstVisitModal();
   firstVisitModalCookie();
   productQuantityCounter();
+  flexibleInput(String('.checkoutForm__inputTextRow'));
 
   
 };

@@ -1131,3 +1131,173 @@ a.productBoxButtons__btn
   line-height (34/26)
   color $baseColor
 // cart page + wishlist page styles end
+
+
+// checkout page styles start
+.checkoutBlock
+  margin-bottom cw(136)
+.checkoutForm
+  wrapper()
+  display flex
+  justify-content space-between
+.checkoutForm__first
+  width 50%
+.checkoutForm__block
+  margin-bottom cw(53)
+  &:last-child
+    margin-bottom 0
+  &--payments
+    label
+      display flex 
+      align-items center
+      margin-bottom cw(27)
+      fz(22)
+      line-height (28/22)
+      color $baseColor
+      input
+        font-size 1rem
+    &:last-child
+      margin-bottom 0
+  .checkoutForm__inputCheckbox
+    display inline-block
+    appearance none
+    width cw(25)
+    height cw(25)
+    border 1px solid $baseColor
+    position relative
+    margin-right cw(19)
+    &:checked
+      &:after
+        position absolute
+        content url('../images/arrows/checkbox-3.svg')
+        width 18px
+        height 13px
+        left 50%
+        top 50%
+        transform translate(-50%, -50%)
+.checkoutForm__title
+  fz(26)
+  line-height (34/26)
+  color $baseColor
+  margin-bottom cw(35)
+.checkoutForm__input
+  display block
+  width 100%
+  margin-bottom cw(30)
+  border none
+  border-bottom 1px solid $baseColor
+  padding-bottom cw(6)
+  fz(20)
+  line-height (26/20)
+  &::placeholder
+    font-family $fontLight
+    color #979797
+.checkoutForm__inputsBlock
+  display flex
+  flex-wrap wrap
+  label
+    fz(20)
+    line-height (26/20)
+.checkoutForm__inputTextRow
+  max-width 100%
+  width cw(80)
+  border none
+  border-bottom 1px solid $baseColor
+  fz(20)
+  line-height 1.1
+  margin-left 3px
+
+.checkoutForm__second
+  width 42%
+.checkoutProducts
+  border 1px solid $baseColor
+  padding cw(30) cw(20)
+  margin-bottom cw(16)
+.checkoutProducts__items
+  margin-bottom cw(38)
+.checkoutProducts__title
+  fz(22)
+  line-height (28/22)
+  color $baseColor
+  margin-bottom cw(30)
+.checkoutProduct
+  display flex
+  justify-content space-between
+  margin-bottom cw(32)
+  padding-bottom cw(20)
+  border-bottom 1px solid #D2D2D2
+.checkoutProduct__img
+  display block
+  width 15%
+  img
+    display block
+    max-height 100px
+    object-fit cover
+.checkoutProduct__content
+  width 78%
+  display flex
+  flex-direction column
+.checkoutProduct__title
+  fz(18)
+  line-height (23/18)
+  color $baseColor
+  margin-bottom cw(18)
+  @media (min-width 992px)
+    &:hover
+      text-decoration underline
+  span
+    display block
+    white-space nowrap
+.checkoutProduct__btn
+  display block
+  width fit-content
+  fz(16)
+  line-height (21/16)
+  color #979797
+  transition all .3s
+  @media (min-width 992px)
+    &:hover
+      color $baseColor
+.checkoutProduct__price
+  text-align right
+  position relative
+  top cw(-10)
+  fz(20)
+  line-height (26/20)
+  color $baseColor
+  span
+    font-family $fontMd
+.checkoutProducts__total
+  text-align right
+  fz(22)
+  line-height (28/22)
+  color $baseColor
+  span
+    margin-left cw(13)
+    font-family $fontMd
+.checkoutForm__privacyBlock
+  text-align right
+  fz(15)
+  line-height (19/15)
+  color #979797
+  margin-bottom cw(30)
+  a
+    @media (min-width 992px)
+      &:hover
+        text-decoration underline
+.checkoutForm__btn
+  width fit-content
+  display block
+  margin-left auto
+  fz(21)
+  line-height (27/21)
+  color $baseColor
+  background-color transparent
+  border 1px solid $baseColor
+  padding cw(18) cw(82)
+  transition all .3s
+  @media(min-width 992px)
+    &:hover
+      background-color $baseColor
+      color #fff
+// checkout page styles end

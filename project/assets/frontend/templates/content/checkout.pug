@@ -11,26 +11,57 @@
     .checkoutForm__first
       .checkoutForm__block 
         .checkoutForm__title Покупатель
-          input.checkoutForm__input(type="email")
-          input.checkoutForm__input(type="text")
-          input.checkoutForm__input(type="tel")
+        input.checkoutForm__input(type="email", placeholder="E-mail")
+        input.checkoutForm__input(type="text", placeholder="Имя и фамилия")
+        input.checkoutForm__input(type="tel", placeholder="Телефон")
       .checkoutForm__block 
         .checkoutForm__title Адрес доставки
-          input.checkoutForm__input(type="text")
-          input.checkoutForm__input(type="text")
-          input.checkoutForm__input(type="text")
-          .checkoutForm__inputsBlock
-            input(type="checkbox", id="takeSelf", checked)
-            label(for="takeSelf") Заберу самостоятельно по адресу г. Краснодар, ул.
-            input.checkoutForm__inputTextRow(type="text")
-      .checkoutForm__block 
+        input.checkoutForm__input(type="text", placeholder="Регион")
+        input.checkoutForm__input(type="text", placeholder="Город")
+        input.checkoutForm__input(type="text", placeholder="Адрес")
+        .checkoutForm__inputsBlock
+          input.checkoutForm__inputCheckbox(type="checkbox", id="takeSelf", checked)
+          label(for="takeSelf") Заберу самостоятельно по адресу г. Краснодар, ул.
+          input.checkoutForm__inputTextRow(type="text")
+      .checkoutForm__block.checkoutForm__block--payments
         .checkoutForm__title Способ оплаты
-        label Оплата картой на сайте
-          input(type="checkbox", checked)
-        label Оплата при получении
-          input(type="checkbox")
+        label 
+          input.checkoutForm__inputCheckbox(type="checkbox", checked)
+          | Оплата картой на сайте
+        label 
+          input.checkoutForm__inputCheckbox(type="checkbox")
+          | Оплата при получении
     .checkoutForm__second
-    
+      .checkoutForm__products.checkoutProducts
+        .checkoutProducts__items
+          .checkoutProducts__title Ваша корзина
+          .checkoutProducts__product.checkoutProduct
+            a.checkoutProduct__img(href="product-page.html")
+              img(src="images/products/product2.jpg", alt="")
+            .checkoutProduct__content 
+              a.checkoutProduct__title(href="product-page.html") Спортивный костюм оверсайз с брюками
+                span (небесный голубой / 42) 
+              a.checkoutProduct__btn(href="#") Удалить
+              .checkoutProduct__price 2 700 ₽ 
+          .checkoutProducts__product.checkoutProduct
+            a.checkoutProduct__img(href="product-page.html")
+              img(src="images/products/product4.jpg", alt="")
+            .checkoutProduct__content 
+              a.checkoutProduct__title(href="product-page.html") Спортивный костюм с шортами
+                span (бежевый / 46) 
+              a.checkoutProduct__btn(href="#") Удалить
+              .checkoutProduct__price 3 000 ₽ 
+        .checkoutProducts__total Итого:
+          span 5 700 ₽
+      .checkoutForm__privacyBlock Размещая заказ, вы принимаете 
+        a(href="#") политику конфиденциальности
+      input.checkoutForm__btn(type="submit", value="Заказать ")
+
+
+
+
+
+
 
 .modalFirstVisit
   .modalFirstVisit__content 

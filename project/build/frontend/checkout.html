@@ -57,7 +57,7 @@
                         <a href="cart.html">
                             <img src="images/icons/cart.svg" alt="">
                         </a>
-                        <div class="headerInnerUserBlockCart__amount">3</div>
+                        <div class="headerInnerUserBlockCart__amount">2</div>
                     </div>
                 </div>
             </div>
@@ -77,35 +77,58 @@
                 <form class="checkoutBlock__form checkoutForm" action="#">
                     <div class="checkoutForm__first">
                         <div class="checkoutForm__block">
-                            <div class="checkoutForm__title">Покупатель
-                                <input class="checkoutForm__input" type="email">
-                                <input class="checkoutForm__input" type="text">
-                                <input class="checkoutForm__input" type="tel">
-                            </div>
+                            <div class="checkoutForm__title">Покупатель</div>
+                            <input class="checkoutForm__input" type="email" placeholder="E-mail">
+                            <input class="checkoutForm__input" type="text" placeholder="Имя и фамилия">
+                            <input class="checkoutForm__input" type="tel" placeholder="Телефон">
                         </div>
                         <div class="checkoutForm__block">
-                            <div class="checkoutForm__title">Адрес доставки
-                                <input class="checkoutForm__input" type="text">
-                                <input class="checkoutForm__input" type="text">
-                                <input class="checkoutForm__input" type="text">
-                                <div class="checkoutForm__inputsBlock">
-                                    <input type="checkbox" id="takeSelf" checked>
-                                    <label for="takeSelf">Заберу самостоятельно по адресу г. Краснодар, ул.</label>
-                                    <input class="checkoutForm__inputTextRow" type="text">
-                                </div>
+                            <div class="checkoutForm__title">Адрес доставки</div>
+                            <input class="checkoutForm__input" type="text" placeholder="Регион">
+                            <input class="checkoutForm__input" type="text" placeholder="Город">
+                            <input class="checkoutForm__input" type="text" placeholder="Адрес">
+                            <div class="checkoutForm__inputsBlock">
+                                <input class="checkoutForm__inputCheckbox" type="checkbox" id="takeSelf" checked>
+                                <label for="takeSelf">Заберу самостоятельно по адресу г. Краснодар, ул.</label>
+                                <input class="checkoutForm__inputTextRow" type="text">
                             </div>
                         </div>
-                        <div class="checkoutForm__block">
+                        <div class="checkoutForm__block checkoutForm__block--payments">
                             <div class="checkoutForm__title">Способ оплаты</div>
-                            <label>Оплата картой на сайте
-                                <input type="checkbox" checked>
-                            </label>
-                            <label>Оплата при получении
-                                <input type="checkbox">
-                            </label>
+                            <label>
+                                <input class="checkoutForm__inputCheckbox" type="checkbox" checked>Оплата картой на сайте</label>
+                            <label>
+                                <input class="checkoutForm__inputCheckbox" type="checkbox">Оплата при получении</label>
                         </div>
                     </div>
-                    <div class="checkoutForm__second"></div>
+                    <div class="checkoutForm__second">
+                        <div class="checkoutForm__products checkoutProducts">
+                            <div class="checkoutProducts__items">
+                                <div class="checkoutProducts__title">Ваша корзина</div>
+                                <div class="checkoutProducts__product checkoutProduct">
+                                    <a class="checkoutProduct__img" href="product-page.html">
+                                        <img src="images/products/product2.jpg" alt="">
+                                    </a>
+                                    <div class="checkoutProduct__content"> <a class="checkoutProduct__title" href="product-page.html">Спортивный костюм оверсайз с брюками<span>(небесный голубой / 42) </span></a><a class="checkoutProduct__btn" href="#">Удалить</a>
+                                        <div class="checkoutProduct__price">2 700 ₽</div>
+                                    </div>
+                                </div>
+                                <div class="checkoutProducts__product checkoutProduct">
+                                    <a class="checkoutProduct__img" href="product-page.html">
+                                        <img src="images/products/product4.jpg" alt="">
+                                    </a>
+                                    <div class="checkoutProduct__content"> <a class="checkoutProduct__title" href="product-page.html">Спортивный костюм с шортами<span>(бежевый / 46) </span></a><a class="checkoutProduct__btn" href="#">Удалить</a>
+                                        <div class="checkoutProduct__price">3 000 ₽</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkoutProducts__total">Итого:<span>5 700 ₽</span>
+                            </div>
+                        </div>
+                        <div class="checkoutForm__privacyBlock">Размещая заказ, вы принимаете <a href="#">политику конфиденциальности</a>
+                        </div>
+                        <input class="checkoutForm__btn" type="submit" value="Заказать ">
+                    </div>
                 </form>
             </div>
             <div class="modalFirstVisit">
