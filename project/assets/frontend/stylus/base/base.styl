@@ -189,7 +189,102 @@ a
 	width 30px
 	height 30px
 }
-    
+
+//  --- modal first visit ---
+.modalFirstVisit
+  display none
+  &--active
+    display block
+.modalFirstVisit__overlay
+  position fixed
+  left 0
+  top 0
+  right 0
+  bottom 0
+  background rgba(57, 57, 57, 0.74)
+  z-index 12
+.modalFirstVisit__content
+  position fixed
+  left 50vw
+  top 50vh
+  transform translate(-50%, -50%)
+  background #fff
+  max-width 100%
+  z-index 15
+.modalFirstVisit__inner
+  position relative
+  padding cw(84) cw(167)
+  width max-content
+  text-align center
+.modalFirstVisit__close
+  position absolute
+  right cw(40)
+  top cw(40)
+  width cw(32)
+  height cw(32)
+  opacity 1
+  transition all .2s
+  cursor pointer
+  @media(min-width 992px)
+    &:hover
+      opacity 0.4
+  &:before,
+  &:after
+    position absolute
+    left cw(15)
+    content ''
+    height cw(33)
+    width 2px
+    background-color #000
+  &:before
+    transform rotate(45deg)
+  &:after
+    transform rotate(-45deg)
+
+
+.modalFirstVisit__title
+  font-family $fontMd
+  fz(30)
+  line-height (38/30)
+  color #000
+  margin-bottom cw(25)
+  text-transform uppercase
+.modalFirstVisit__subtitle
+  font-family $fontMd
+  fz(30)
+  line-height (38/30)
+  color #000
+  margin-bottom cw(66)
+.modalFirstVisit__form
+  width 90%
+  display flex
+  flex-direction column
+  margin 0 auto
+.modalFirstVisit__input--email
+  border none
+  border-bottom 1px solid $baseColor
+  margin-bottom cw(69)
+  fz(20)
+  padding-bottom 13px
+  &::placeholder
+    font-family $fontLight
+.modalFirstVisit__input--btn
+  border 1px solid transparent
+  background $baseColor
+  width fit-content
+  margin 0 auto
+  font-family $fontLight
+  fz(21)
+  line-height (27/21)
+  color #fff
+  padding cw(15) cw(74)
+  transition all .3s
+  @media (min-width: 992px)
+    &:hover
+      background #fff
+      color $baseColor
+      border 1px solid $baseColor
+
 // end of common styles
 
 

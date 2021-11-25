@@ -214,6 +214,29 @@ window.onload = function() {
     }
   }
 
+  function firstVisitModal () {
+    if ($('.modalFirstVisit').length) {
+      $('.modalFirstVisit__overlay, .modalFirstVisit__close').on('click', function () {
+        $('.modalFirstVisit').removeClass('modalFirstVisit--active');
+        console.log('closed')
+      });
+    }
+  }
+
+  function firstVisitModalCookie () {
+    // Проверяем если ли в куках запись, что посетитель уже был
+    if (!$.cookie('visited')) {
+      $(".modalFirstVisit").addClass('modalFirstVisit--active');
+      console.log('new')
+    }
+
+    //создаем куки
+    $.cookie('visited', true, {
+      expires: 365,
+      path: '/'
+    });
+  }
+
 
 
 
@@ -249,6 +272,8 @@ window.onload = function() {
   currentSize();
   productVariationsSlider();
   productVariationsSliderCurrentSlide();
+  firstVisitModal();
+  firstVisitModalCookie();
 
   
 };
