@@ -9,6 +9,7 @@ html
 body
   font-family: 'AkzidenzGroteskPro-Regular', sans-serif;
   color $baseColor
+  overflow-x hidden
 
 a 
   color inherit
@@ -29,10 +30,12 @@ a
 .blockTitleBox__line
   position absolute
   content ''
-  width 100%
+  // width 100%
   height 1px
   background-color $baseColor
   top 50%
+  left 0px
+  right 0px
   z-index -1
 
 .blockTitleBox__title
@@ -44,6 +47,10 @@ a
   width fit-content
   background-color #fff
   padding-right cw(62)
+
+// .fullWidthTitleLine
+//   right -100%
+
 
 .productCard
   position relative
@@ -1426,4 +1433,47 @@ a.productBoxButtons__btn
     svg
       path
         fill #948c8c
+
+.aboutMaterial
+  wrapper()
+  margin-bottom cw(88)
+.aboutMaterial__title
+  margin-bottom cw(88)
+.aboutMaterial__text
+  fz(22)
+  line-height (28/22)
+  color $baseColor
+  p
+    margin-bottom cw(20)
+
+.aboutContacts
+  wrapper()
+  margin-bottom cw(136)
+.aboutContacts__title
+  margin-bottom cw(88)
+.aboutContacts__content
+  display flex
+  justify-content space-between
+.aboutContacts__requisites
+  p
+    fz(22)
+    line-height (28/22)
+    color $baseColor
+.aboutContactsData__item
+  fz(22)
+  line-height (28/22)
+  color $baseColor
+  margin-bottom cw(22)
+  a
+    display inline-block
+    margin-left 9px
+    @media (min-width 992px)
+      &:hover
+        text-decoration underline
+  &--inst
+    display flex
+    align-items center
+    img
+      display block
+      margin-left 9px
 // about page styles end

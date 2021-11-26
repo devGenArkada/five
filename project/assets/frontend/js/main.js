@@ -138,7 +138,9 @@ window.onload = function() {
   }
 
   function myRangeSlider () {
-    $(".js-range-slider").ionRangeSlider();
+    if ($(".js-range-slider").length) {
+      $(".js-range-slider").ionRangeSlider();
+    }
   }
 
   function mainProductSlider () {
@@ -278,7 +280,24 @@ window.onload = function() {
   }
 
 
-  
+  function fullWidthTitleLine () {
+    if ($('.fullWidthTitleLine').length) {
+      
+      $(window).on("resize", function () {
+        $('.fullWidthTitleLine').each(function() {
+          let thisItem = $(this)
+            if ($(window).width() > (thisItem.offset().left + thisItem.outerWidth() - parseInt(thisItem.css("right")))) {
+              let rightOffset = ($(window).width() - (thisItem.offset().left + thisItem.outerWidth()));
+              thisItem.css("right", "-" + rightOffset + "px")
+            } 
+            else if ($(window).width() < (thisItem.offset().left + thisItem.outerWidth() - parseInt(thisItem.css("right")))) {
+              let rightOffset = ($(window).width() - (thisItem.offset().left + thisItem.width()));
+              thisItem.css("right", rightOffset + "px")
+            }
+        })
+      }).resize();
+    }
+  }
 
 
 
@@ -296,12 +315,13 @@ window.onload = function() {
   
   // countVisibleCharacters($('.testimonialsSliderItem__text'));
 
-  if ($(".js-range-slider").length) {
-    myRangeSlider();
-  }
+  myRangeSlider();
 
   if ($(window).width() > 768 && $(".businessCardBlock__textContent").length) {
     businessCardDecor();
+  }
+  if ($(window).width() > 768) {
+    fullWidthTitleLine();
   }
 
   mainProductSlider();
