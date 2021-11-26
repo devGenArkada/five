@@ -31,11 +31,13 @@ window.onload = function() {
   }
 
   function businessCardDecor() {
-    $(window).on("resize", function () {
-      var rightOffset = ($(window).width() - ($('.businessCardBlock__textContent').offset().left + $('.businessCardBlock__textContent').outerWidth()));
-      $('.businessCardBlockTextContent__decor').css("right", "-" + rightOffset + "px")
-      // console.log('resized4')
-    }).resize();
+    if ($(".businessCardBlock__textContent").length) {  
+      $(window).on("resize", function () {
+        var rightOffset = ($(window).width() - ($('.businessCardBlock__textContent').offset().left + $('.businessCardBlock__textContent').outerWidth()));
+        $('.businessCardBlockTextContent__decor').css("right", "-" + rightOffset + "px")
+        // console.log('resized4')
+      }).resize();
+    }
   }
 
   function chechTestimonial (thisBlock) {
@@ -282,18 +284,12 @@ window.onload = function() {
 
   function fullWidthTitleLine () {
     if ($('.fullWidthTitleLine').length) {
-      
       $(window).on("resize", function () {
         $('.fullWidthTitleLine').each(function() {
           let thisItem = $(this)
-            if ($(window).width() > (thisItem.offset().left + thisItem.outerWidth() - parseInt(thisItem.css("right")))) {
-              let rightOffset = ($(window).width() - (thisItem.offset().left + thisItem.outerWidth()));
-              thisItem.css("right", "-" + rightOffset + "px")
-            } 
-            else if ($(window).width() < (thisItem.offset().left + thisItem.outerWidth() - parseInt(thisItem.css("right")))) {
-              let rightOffset = ($(window).width() - (thisItem.offset().left + thisItem.width()));
-              thisItem.css("right", rightOffset + "px")
-            }
+          let parent = $(thisItem).closest('.blockTitleBox')
+          var rightOffset = ($(window).width() - ($(parent).offset().left + $(parent).outerWidth()));
+          thisItem.css("right", "-" + rightOffset + "px")
         })
       }).resize();
     }
@@ -317,10 +313,8 @@ window.onload = function() {
 
   myRangeSlider();
 
-  if ($(window).width() > 768 && $(".businessCardBlock__textContent").length) {
-    businessCardDecor();
-  }
   if ($(window).width() > 768) {
+    businessCardDecor();
     fullWidthTitleLine();
   }
 
