@@ -1312,28 +1312,28 @@ a.productBoxButtons__btn
 
 
 
-// about page styles start
-.aboutFirstScreen
+// about and shipping page styles start
+.pageFirstScreen
   display flex
   justify-content space-between
   height cw(450)
   margin-bottom cw(100)
   overflow-x clip
-.aboutFirstScreen__first
+.pageFirstScreen__first
   width 39%
   img
     margin-left auto
-.aboutFirstScreen__second
+.pageFirstScreen__second
   width 59%
   position relative
-.aboutFirstScreen__first,
-.aboutFirstScreen__second
+.pageFirstScreen__first,
+.pageFirstScreen__second
   img
     display block
     object-fit cover
     height 100%
     width auto
-.aboutFirstScreen__decorImg
+.pageFirstScreen__decorImg
   position absolute
   left 0
   bottom 0
@@ -1346,7 +1346,8 @@ a.productBoxButtons__btn
 .aboutUsCard
   wrapper()
   margin-bottom cw(131)
-.aboutUsCard__title
+.aboutUsCard__title,
+.shipping__title
   font-family $fontMd
   fz(35)
   line-height (44/35)
@@ -1417,10 +1418,6 @@ a.productBoxButtons__btn
     height 470px
     max-height 500px
     width 370px !important
-//   &.slick-active
-//     display block
-//     &[data-slick-index="3"]
-//       width 450px !important
 .aboutPageSlider__btn
   position absolute
   top -70px
@@ -1477,4 +1474,33 @@ a.productBoxButtons__btn
     img
       display block
       margin-left 9px
-// about page styles end
+
+.shipping
+  wrapper()
+  margin-bottom cw(126)
+.shippingBlock
+  margin-bottom cw(75)
+  fz(22)
+  line-height (28/22)
+  color $baseColor
+  p
+    margin-bottom cw(20)
+  &--border
+    padding cw(45) 0 0 cw(42)
+    position relative
+    &::before
+      position absolute
+      content ''
+      width 1px
+      height 80%
+      background-color $baseColor
+      left 0
+      top 0
+.shippingBlock__title
+  font-family $fontMd
+  fz(26)
+  line-height (33/26)
+  color $baseColor
+  margin-bottom cw(55)
+
+// about and shipping page styles end
