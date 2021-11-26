@@ -1301,3 +1301,129 @@ a.productBoxButtons__btn
       background-color $baseColor
       color #fff
 // checkout page styles end
+
+
+
+// about page styles start
+.aboutFirstScreen
+  display flex
+  justify-content space-between
+  height cw(450)
+  margin-bottom cw(100)
+  overflow-x clip
+.aboutFirstScreen__first
+  width 39%
+  img
+    margin-left auto
+.aboutFirstScreen__second
+  width 59%
+  position relative
+.aboutFirstScreen__first,
+.aboutFirstScreen__second
+  img
+    display block
+    object-fit cover
+    height 100%
+    width auto
+.aboutFirstScreen__decorImg
+  position absolute
+  left 0
+  bottom 0
+  transform translate(-60%, 40%)
+  z-index -1
+  display block
+  object-fit contain
+  max-width cw(260)
+  max-height cw(264)
+.aboutUsCard
+  wrapper()
+  margin-bottom cw(131)
+.aboutUsCard__title
+  font-family $fontMd
+  fz(35)
+  line-height (44/35)
+  color $baseColor
+  text-align right
+  margin-bottom cw(26)
+.aboutUsCard__block
+  display flex
+  justify-content space-between
+  align-items flex-end
+.aboutUsCardContent
+  width 49%
+  border-left 1px solid $baseColor
+  padding cw(45) 0 cw(12) cw(42)
+.aboutUsCardContent__title
+  font-family $fontMd
+  fz(26)
+  line-height (33/26)
+  color $baseColor
+  margin-bottom cw(57)
+.aboutUsCardContent__desc
+  p
+    fz(22)
+    line-height (28/22)
+    color $baseColor
+    margin-bottom cw(30)
+.aboutUsCardContent__aside
+  width 46%
+  padding-bottom cw(72)
+.aboutUsCardContent__asideCard
+  border 1px solid $baseColor
+  padding cw(37) cw(37) cw(7) cw(64)
+  p
+    fz(22)
+    line-height (28/22)
+    color $baseColor
+    margin-bottom cw(30)
+
+.aboutPageSliderWrapper
+  wrapper()
+  margin-bottom cw(139)
+  overflow-x clip
+  position relative
+.aboutPageSlider
+  margin 0 -10px
+  margin-right -122px
+  height 470px
+  display flex
+  flex-direction column
+  justify-content flex-end
+  .slick-track
+    display flex
+    align-items flex-end
+.aboutPageSlider__item
+  margin-left 10px
+  margin-right 10px
+  height auto
+  max-height 340px
+  transition all .7s
+  overflow-y clip
+  img
+    display block
+    object-fit cover
+    width 100%
+    height 100%
+    max-height 500px
+  &.slick-current
+    height 470px
+    max-height 500px
+    width 370px !important
+//   &.slick-active
+//     display block
+//     &[data-slick-index="3"]
+//       width 450px !important
+.aboutPageSlider__btn
+  position absolute
+  top -70px
+  cursor pointer
+  &--prev
+    right 305px
+    transform rotate(180deg)
+  &--next
+    right 122px
+  &.slick-disabled
+    svg
+      path
+        fill #948c8c
+// about page styles end
