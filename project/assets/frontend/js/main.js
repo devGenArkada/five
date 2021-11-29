@@ -41,11 +41,16 @@ window.onload = function() {
   }
 
   function chechTestimonial (thisBlock) {
-    var thisBlockText = thisBlock.find('.testimonialsSliderItem__text')
-    // var a = thisBlockText.prop('scrollHeight');
-    // var b = $(".testimonialsSliderItem__text").height()
+    let thisBlockText = thisBlock.find('.testimonialsSliderItem__text')
+    // console.log('thisBlockText', thisBlockText)
+    // let scrollHeight = thisBlockText.prop('scrollHeight');
+    // console.log('scrollHeight', scrollHeight)
+    let height = thisBlockText.height()
+    // let heightCss = thisBlockText.css("height")
+    // console.log('height', height)
+    // console.log('heightCss', heightCss)
     // var c = $(".testimonialsSliderItem__text").height() + 10
-    if (thisBlockText.prop('scrollHeight') > ($(".testimonialsSliderItem__text").height()) + 10 ) {
+    if (thisBlockText.prop('scrollHeight') > (height + 10 )) {
       //this element is overflowing on the y axis
       thisBlock.addClass('testimonialsSliderItem--scrolled')
       // console.log('overflowen')
@@ -74,14 +79,23 @@ window.onload = function() {
 
 
   function testimonialsSlider() {
-    let slidesToScrollValue = 4;
+    if ($(window).width() > 960) {
+      var slidesOnPage = 4;
+    }else if ($(window).width() > 768) {
+      var slidesOnPage = 3;
+    }else if ($(window).width() > 480) {
+      var slidesOnPage = 2;
+    }else if ($(window).width() < 480) {
+      var slidesOnPage = 1;
+    }
+    console.log(slidesOnPage)
     sliderPagination();
     sliderInitialization();
 
     function sliderInitialization () {
       $('.testimonialsSlider').slick({
-        slidesToShow: 4,
-        slidesToScroll: slidesToScrollValue,
+        slidesToShow: slidesOnPage,
+        slidesToScroll: slidesOnPage,
         prevArrow: "<div class='testimonialsSlider__btn testimonialsSlider__btn--prev'></div>",
         nextArrow: "<div class='testimonialsSlider__btn testimonialsSlider__btn--next'></div>",
       });
@@ -96,12 +110,12 @@ window.onload = function() {
         var slickSlideCountValue = slickSlideCount
         var slideCount = 0;
         while (slickSlideCountValue > 0) {
-          slickSlideCountValue = slickSlideCountValue -  slidesToScrollValue;
+          slickSlideCountValue = slickSlideCountValue -  slidesOnPage;
           slideCount++
         }
         //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
         // var i = (currentSlide ? currentSlide : 0) + 1;
-        var i = (currentSlide ? (currentSlide/slidesToScrollValue) : 0) + 1;
+        var i = (currentSlide ? (currentSlide/slidesOnPage) : 0) + 1;
         $status.text('' + i + '/' + '' + slideCount);
         $('.pagingInfoBlockItems__item').css({width: `${100/slideCount}%`, left: `${ ((i-1)*100) / slideCount }%`})
       });
@@ -313,8 +327,10 @@ window.onload = function() {
 
   myRangeSlider();
 
-  if ($(window).width() > 768) {
+  if ($(window).width() > 960) {
     businessCardDecor();
+  }
+  if ($(window).width() > 768) {
     fullWidthTitleLine();
   }
 

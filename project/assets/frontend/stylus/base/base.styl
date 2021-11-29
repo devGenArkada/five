@@ -14,7 +14,10 @@ body
 a 
   color inherit
   text-decoration none
-  
+
+img
+  max-width 100%
+
 .hide
   display none
 
@@ -336,7 +339,7 @@ a
   position relative
 .firstScreen__link
   display block
-  max-width 280px
+  width fit-content
   border: 2px solid #fff
   color: #fff
   fz(23)
@@ -345,6 +348,8 @@ a
   margin 0 auto
   position relative
   top 65%
+  sm(top, 50%)
+  sm(transform, translateY(-50%))
   @media(min-width:992px)
     &:hover
       text-decoration underline
@@ -352,6 +357,7 @@ a
   wrapper()
   padding-top cw(100)
   margin-bottom cw(120)
+  sm(margin-bottom, cw(50))
 .specialOffersBlock__titleWrapper
   margin-bottom cw(101)
 .specialOffersBlock__mainLink
@@ -378,10 +384,12 @@ a
 .specialOffersBlockBox
   display flex
   justify-content space-between
+  flex-wrap wrap
 .specialOffers__productCard
   display block
   width 23%
-  // width 23.75%
+  sm(width, 48%)
+  sm(margin-bottom, cw(70))
 
 .businessCardBlock
   wrapper()
@@ -389,18 +397,28 @@ a
   align-items flex-end
   justify-content space-between
   margin-bottom cw(135)
+  md(flex-direction, column)
+  padding-top cw(170)
 .businessCardBlockImages
+  position relative
   width 57%
+  md(width, 100%)
 .businessCardBlockImagesTop
   margin 0 auto
   width fit-content
-  position relative
-  top 160px
-  left 90px
+  position absolute
+  left 55%
+  top cw(-200)
+  xs(top, -180px)
+  transform translateX(-50%)
+  z-index -1
+  sm(transform, translateX(-50%) scale(0.8) )
+  xs(transform, translateX(-50%) scale(0.65))
 .businessCardBlockImagesBottom
   display flex
   align-items flex-end
   justify-content space-between
+  md(margin-bottom, cw(50))
 .businessCardBlockImagesBottom__imgWrapper
   img
     display block
@@ -414,6 +432,7 @@ a
 .businessCardBlockTextContent
   position relative
   width 38%
+  md(width, 100%)
   p
     font-family $fontLight
     fz(21)
@@ -427,6 +446,7 @@ a
     top -143px
     height 1px
     background-color $baseColor
+    md(display, none)
 .businessCardBlockTextContent__title
   font-family $fontMd
   fz(24)
@@ -452,10 +472,14 @@ a
   background-color $baseColor
   padding-top cw(70)
   padding-bottom cw(75)
+  margin-bottom cw(135)
 .feedBackContent
   wrapper()
   display flex
   justify-content space-between
+  sm(flex-direction, column)
+.feedBackContentHeaders
+  sm(margin-bottom, cw(60))
 .feedBackContentHeaders__mainTitle
   font-family $fontMd
   fz(30)
@@ -469,6 +493,7 @@ a
   color #fff
 .feedBackContentFormWrapper
   width 38%
+  sm(width, 100%)
 .feedBackContentForm
   display flex
   flex-direction: column
@@ -497,7 +522,6 @@ a
 
 .testimonialsBlock
   wrapper()
-  padding-top cw(135)
   padding-bottom cw(136)
 .testimonialsBlock__title
   margin-bottom cw(115)
@@ -513,6 +537,7 @@ a
     fz(23)
     line-height (30/23)
     color $baseColor
+    sm(bottom, -40px)
   .pagingInfoBlockItems
     position relative
     width cw(250)
@@ -542,10 +567,10 @@ a
     .testimonialsSliderItem__moreBtn
       display block
   &--full
-    max-height 500px
+    max-height 700px
     .testimonialsSliderItem__inner,
     .testimonialsSliderItem__text
-      max-height 500px
+      max-height 700px
     .testimonialsSliderItem__moreBtn
       &:after
         transform rotate(180deg)
