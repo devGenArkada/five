@@ -1504,3 +1504,43 @@ a.productBoxButtons__btn
   margin-bottom cw(55)
 
 // about and shipping page styles end
+
+
+// 404 page styles start
+.notFoundBlock
+  position relative
+  wrapper()
+  padding-top cw(192)
+  padding-bottom cw(228)
+.notFoundBlock__content
+  width 64%
+  margin-right 0
+  margin-left auto
+.notFoundBlock__title
+  fz(40)
+  line-height (52/40)
+  color $baseColor
+  padding-left cw(170)
+.notFoundBlock__subtitle
+  fz(150)
+  color $baseColor
+  margin-bottom cw(63)
+.notFoundBlock__link
+  display inline-block
+  fz(22)
+  line-height (28/20)
+  color $baseColor
+  padding cw(20) cw(56)
+  border 1px solid $baseColor
+  transition all .3s
+  @media(min-width 992px)
+    &:hover
+      background $baseColor
+      color #fff
+.notFoundBlock__decorImg
+  position absolute
+  left 0
+  top 13px
+
+
+// 404 page styles end
