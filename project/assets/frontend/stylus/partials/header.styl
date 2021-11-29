@@ -5,7 +5,32 @@
   align-items center
   padding-top cw(27)
   padding-bottom cw(13)
+.headerInner__nav
+  @media(max-width 768px)
+    display none
+    &--mobile
+      display block
+      position fixed
+      z-index 4
+      background #fff
+      left 0
+      right 0
+      top 0
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      .headerInnerNavList
+        display flex
+        flex-direction column
+        align-items center
+        padding cw(35) 0px
+        li
+          padding 0
+          a
+            display inline-block
+            padding cw(10) 0
+            text-transform uppercase
 .headerInnerNavList
+  // @media(max-width 768px)
+  //   display none
   display flex
   li
     padding-right cw(65)
@@ -50,79 +75,80 @@
 
 // mobile menu
 /* mobile menu css */
-// .mobileMenu {
-//     display: none;
-//     width: 30px;
-//     height: 30px;
-//     background-color: transparent;
-//     position: absolute;
-//     top: 25px;
-//     right: 18px;
-// }
-// .mobileMenuBtn {
-//     background-color: transparent;
-//     border: none;
-//     outline: none;
-//     padding: 0;
-//     cursor: pointer;
-// }
-// .mobileMenuBtn::before,
-// .mobileMenuBtn::after {
-//     content: "";
-//     width: 24px;
-//     height: 2px;
-//     background-color: #000;
-//     display: block;
-//     margin-bottom: 4px;
-//     -webkit-transition: -webkit-transform 0.3s;
-//     transition: -webkit-transform 0.3s;
-//     -o-transition: transform 0.3s;
-//     transition: transform 0.3s;
-//     transition: transform 0.3s, -webkit-transform 0.3s;
-// }
-// .mobileMenuBtn::after {
-//     margin-bottom: 0;
-//     margin-right: 6px;
-//     width: 24px;
-//     margin-left: auto;
-// }
-// .mobileMenuBtn--active {
-//     position: fixed;
-//     z-index: 999;
-// }
-// .mobileMenuBtn__line {
-//     background-color: #000;
-//     display: block;
-//     width: 24px;
-//     height: 2px;
-//     margin-bottom: 4px;
-//     opacity: 1;
-//     -webkit-transition: opacity 1s;
-//     -o-transition: opacity 1s;
-//     transition: opacity 1s;
-// }
-// .mobileMenuBtn.mobileMenuBtn--active .mobileMenuBtn__line {
-//     opacity: 0;
-//     -webkit-transition: opacity 0s;
-//     -o-transition: opacity 0s;
-//     transition: opacity 0s;
-// }
-// .mobileMenuBtn.mobileMenuBtn--active::after {
-//     width: 24px;
-//     -webkit-transform: translateY(-6px) rotate(-135deg);
-//     -ms-transform: translateY(-6px) rotate(-135deg);
-//     transform: translateY(-6px) rotate(-135deg);
-// }
-// .mobileMenuBtn.mobileMenuBtn--active::before {
-//     -webkit-transform: translateY(6px) rotate(135deg);
-//     -ms-transform: translateY(6px) rotate(135deg);
-//     transform: translateY(6px) rotate(135deg);
-// }
+.mobileMenu {
+    display: none;
+    width: 30px;
+    height: 15px;
+    background-color: transparent;
+    position: relative;
+    order: -1;
+    // top: 25px;
+    // right: 18px;
+}
+.mobileMenuBtn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+}
+.mobileMenuBtn::before,
+.mobileMenuBtn::after {
+    content: "";
+    width: 24px;
+    height: 2px;
+    background-color: #000;
+    display: block;
+    margin-bottom: 4px;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.mobileMenuBtn::after {
+    margin-bottom: 0;
+    margin-right: 6px;
+    width: 24px;
+    margin-left: auto;
+}
+.mobileMenuBtn--active {
+    position: fixed;
+    z-index: 999;
+}
+.mobileMenuBtn__line {
+    background-color: #000;
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin-bottom: 4px;
+    opacity: 1;
+    -webkit-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+.mobileMenuBtn.mobileMenuBtn--active .mobileMenuBtn__line {
+    opacity: 0;
+    -webkit-transition: opacity 0s;
+    -o-transition: opacity 0s;
+    transition: opacity 0s;
+}
+.mobileMenuBtn.mobileMenuBtn--active::after {
+    width: 24px;
+    -webkit-transform: translateY(-6px) rotate(-135deg);
+    -ms-transform: translateY(-6px) rotate(-135deg);
+    transform: translateY(-6px) rotate(-135deg);
+}
+.mobileMenuBtn.mobileMenuBtn--active::before {
+    -webkit-transform: translateY(6px) rotate(135deg);
+    -ms-transform: translateY(6px) rotate(135deg);
+    transform: translateY(6px) rotate(135deg);
+}
 
-// @media (max-width:1200px)
-//   .mobileMenu {
-//     display: block;
-//     z-index 10
-//   }
+@media (max-width:768px)
+  .mobileMenu {
+    display: block;
+    z-index 10
+  }
 
 /* mobile menu css end */

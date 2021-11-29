@@ -20,14 +20,14 @@ window.onload = function() {
     // mobile menu
     $('.mobileMenuBtn').on('click', function () {
       $('.mobileMenuBtn').toggleClass('mobileMenuBtn--active');
-      $('.headerMenuWrapper').toggleClass('headerMenuWrapper--mobile');
+      $('.headerInner__nav').toggleClass('headerInner__nav--mobile');
       // $('.header__nav').toggleClass('header__nav--mobile');
     });
-    $('.mobile__menu-link').on('click', function () {
-      $('.mobileMenuBtn').removeClass('mobileMenuBtn--active');
-      $('.headerMenuWrapper').removeClass('headerMenuWrapper--mobile');
-      // $('.header__nav').removeClass('header__nav--mobile');
-    });
+    // $('.mobile__menu-link').on('click', function () {
+    //   $('.mobileMenuBtn').removeClass('mobileMenuBtn--active');
+    //   $('.headerInner__nav').removeClass('headerInner__nav--mobile');
+    //   // $('.header__nav').removeClass('header__nav--mobile');
+    // });
   }
 
   function businessCardDecor() {
@@ -301,7 +301,7 @@ window.onload = function() {
   // All functions go below
   ///////////////
 
-  // mobileMenu();
+  mobileMenu();
   if ($('.testimonialsSlider').length) {
     testimonialsSlider();
     testimonials();
