@@ -71,12 +71,14 @@ img
   display block
   position relative
   margin-bottom cw(25)
+  // height 380px
 .productCard__img
   display block
   width 100%
-  height auto
-  max-height 500px
+  height 100%
+  // max-height 500px
   object-fit cover
+  aspect-ratio 285/388
 .productCard__statuses
   position absolute
   top 0
@@ -386,9 +388,10 @@ img
   justify-content space-between
   flex-wrap wrap
 .specialOffers__productCard
-  display block
+  // display block
   width 23%
   sm(width, 48%)
+  xs(width, 100%)
   sm(margin-bottom, cw(70))
 
 .businessCardBlock
@@ -740,6 +743,7 @@ img
         top 50%
         transform translate(-50%, -50%)
 .shopSidebarForm__inputsBox--price
+  // padding-right 15px
   .irs--round
     .irs-bar
       height 1px
@@ -761,7 +765,8 @@ img
       &:before
         display none
 
-
+.shopSectionCatalogBlock
+  width 100%
 .shopSectionCatalogBlockSorting
   margin-bottom cw(49)
   text-align right
@@ -778,6 +783,7 @@ img
   grid-column-gap cw(20)
   grid-row-gap cw(87)
   margin-bottom cw(65)
+  lg(grid-template-columns, 1fr 1fr)
 .shopSectionPagination
   margin-bottom cw(136)
 .shopSectionPagination__list
