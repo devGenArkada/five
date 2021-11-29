@@ -5,6 +5,11 @@
   align-items center
   padding-top cw(27)
   padding-bottom cw(13)
+.headerInnerLogoBox
+  img
+    display block
+    xs(max-width, 80%)
+    xs(margin, 0 auto)
 .headerInner__nav
   @media(max-width 768px)
     display none
@@ -47,9 +52,9 @@
   display flex
   align-items flex-end
 .headerInnerUserBlockCart
-  margin-left cw(48)
-  margin-right cw(48)
+  margin 0 cw(48)
   position relative
+  xs(margin, 0 10px)
 .headerInnerUserBlockCart__amount
   position absolute
   right -4px
