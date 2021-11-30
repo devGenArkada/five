@@ -904,23 +904,24 @@ img
     transform translate(-100%, -50%) rotate(180deg)
 .productBox
   width 95%
+  sm(width, 100%)
   display flex
   flex-wrap wrap
   margin-bottom cw(70)
+  lg(flex-direction, column)
 .productBoxProductImages
   width 52%
+  lg(width, 100%)
   display flex
   justify-content space-between
+  lg(justify-content, center)
   align-items stretch
   margin-bottom cw(70)
 .productBoxProductSlider
   align-self flex-start
-  // width 15%
   width 82px
-  padding-top cw(57)
-  padding-bottom cw(57)
-  margin-top cw(-17)
-  margin-bottom cw(-17)
+  padding cw(57) 0
+  margin cw(-17) 8px cw(-17) 0
 .productBoxProductSlider__item
   margin-top cw(17)
   margin-bottom cw(17)
@@ -956,16 +957,21 @@ img
 
 .productBoxProductImages__mainPhoto
   width 82%
+  lg(width, auto)
   img
     display block
     width 100%
     height 100%
     object-fit cover
+    lg(object-fit, contain)
     max-height 800px
 
 .productBoxContent
   padding-left cw(59)
+  lg(padding-left, cw(102))
+  sm(padding-left, 0)
   width 48%
+  sm(width, 100%)
   margin-bottom cw(70)
 .productBoxContent__productCode
   font-family $fontLight
@@ -997,6 +1003,8 @@ img
     color #FFF
 .productBoxVariationsBlock
   margin-bottom cw(51)
+.productBoxVariationsBlock__sliderWrapper
+  sm(padding, 0 30px)
 .productBoxVariationsBlockSlider
   margin 0 cw(-7)
 .productBoxVariationsBlockSlider__item
@@ -1058,6 +1066,7 @@ img
   padding cw(16) cw(24)
   width fit-content
   cursor pointer
+  text-align center
   & + .productBoxButtons__btn
     margin-left cw(22)
   &--wishlist
@@ -1092,6 +1101,7 @@ a.productBoxButtons__btn
 .recommendedBlockItemsBox
   display flex
   justify-content space-between
+  flex-wrap wrap
 .recommendedBlock__title
   margin-bottom cw(70)
   .blockTitleBox__title
@@ -1100,6 +1110,7 @@ a.productBoxButtons__btn
     padding-left cw(62)
 .recommendedBlockItemsBox__item
   width 23.75%
+  sm(width, 48%)
 // product page styles end
 
 // cart page + wishlist page styles start
