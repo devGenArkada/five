@@ -132,6 +132,7 @@ img
   background url('../images/icons/widget-whatsapp.svg')
   background-size contain
   cursor pointer
+  z-index 99
   transition all .5s
   @media (min-width 992px)
     &:hover
@@ -671,6 +672,39 @@ img
   padding-top cw(62)
   // min-width 220px
   width cw(230)
+  sm(display, none)
+  .shopSidebar__close
+    display none
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    width: 22px;
+    height: 22px;
+    &::before,
+    &::after
+      position: absolute;
+      left: 10px;
+      content: ' ';
+      height: 23px;
+      width: 2px;
+      background-color: #333;
+    &::before
+      transform: rotate(45deg);
+    &::after
+      transform: rotate(-45deg);
+  &--mobile
+    display block !important
+    position fixed
+    left 0
+    right 0
+    top 0
+    height 100%
+    width 100%
+    background #fff
+    z-index 100
+    padding 40px 20px 20px 20px
+    .shopSidebar__close
+      display block
 .shopSidebar__categoriesBlock
   margin-bottom cw(40)
   width inherit
@@ -693,6 +727,27 @@ img
       @media(min-width: 992px)
         &:hover 
           text-decoration underline
+// .close {
+
+// }
+// .close:hover {
+//   opacity: 1;
+// }
+// .close:before, .close:after {
+//   position: absolute;
+//   left: 15px;
+//   content: ' ';
+//   height: 33px;
+//   width: 2px;
+//   background-color: #333;
+// }
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
 
 // --- checkboxes  ---
 .shopSidebarForm__inputsBox--color 
@@ -734,14 +789,10 @@ img
     border 1px solid #000
     margin-right cw(10)
     &:checked
-      &:after
-        position absolute
-        content url('../images/arrows/checkbox-2.svg')
-        width 15px
-        height 20px
-        left 50%
-        top 50%
-        transform translate(-50%, -50%)
+      background-image url('../images/arrows/checkbox-2.svg')
+      background-repeat no-repeat
+      background-size 85%
+      background-position center center
 .shopSidebarForm__inputsBox--price
   // padding-right 15px
   .irs--round
@@ -773,17 +824,33 @@ img
   fz(18)
   line-height (23/18)
   color $baseColor
+  sm(display, flex)
+  sm(justify-content, space-between)
+  sm(align-items, center)
 .shopSectionCatalogBlockSorting__box
+  text-align left
   select
     border none
     border-bottom 1px solid $baseColor
+.shopSectionCatalogBlockSorting__filtersBtn
+  display none
+  sm(display, block)
+  width 23px
+  xs(width, 18px)
+  height 20px
+  xs(height, 15px)
+  margin-left 10px
+  svg
+    width 100%
+    height 100%
 .shopSectionCatalog
   display grid
   grid-template-columns: 1fr 1fr 1fr;
+  lg(grid-template-columns, 1fr 1fr)
+  // xs(grid-template-columns, 1fr)
   grid-column-gap cw(20)
   grid-row-gap cw(87)
   margin-bottom cw(65)
-  lg(grid-template-columns, 1fr 1fr)
 .shopSectionPagination
   margin-bottom cw(136)
 .shopSectionPagination__list

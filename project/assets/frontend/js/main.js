@@ -309,6 +309,17 @@ window.onload = function() {
     }
   }
 
+  function catalogFilters(){
+    if($('.shopSectionCatalogBlockSorting__filtersBtn').length){
+      $('.shopSectionCatalogBlockSorting__filtersBtn').on('click', function(){
+        $('.shopSidebar').addClass('shopSidebar--mobile')
+      })
+      $('.shopSidebar__close').on('click', function(){
+        $('.shopSidebar').removeClass('shopSidebar--mobile')
+      })
+    }
+  }
+
 
 
   ///////////////
@@ -332,6 +343,9 @@ window.onload = function() {
   }
   if ($(window).width() > 768) {
     fullWidthTitleLine();
+  }
+  if ($(window).width() < 768) {
+    catalogFilters();
   }
 
   mainProductSlider();
