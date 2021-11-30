@@ -305,24 +305,30 @@ img
   margin-bottom cw(75)
 .breadcrumbs__list
   display flex
+  overflow-x auto
+  xs(padding-bottom, 7px)
   li
     position relative
     a,
     span
       fz(26)
+      xs(font-size, 14px)
       line-height (34/26)
       color #979797
+      white-space nowrap
     a
       @media (min-width 992px)
         &:hover
           text-decoration underline
           text-underline-offset 2px
     & + li
-      margin-left cw(48)
+      margin-left 48px
+      xs(margin-left, 26px)
       &::after
         position absolute
         content url('../images/arrows/arrow-right3.svg')
-        left cw(-24)
+        left -24px
+        xs(left, -13px)
         top 50%
         transform translate(-50%, -30%)
     &.breadcrumbs__item--current
@@ -917,10 +923,13 @@ img
   lg(justify-content, center)
   align-items stretch
   margin-bottom cw(70)
+  xs(flex-direction, column)
 .productBoxProductSlider
   align-self flex-start
   width 82px
+  xs(width, 100%)
   padding cw(57) 0
+  xs(padding, 25px)
   margin cw(-17) 8px cw(-17) 0
 .productBoxProductSlider__item
   margin-top cw(17)
@@ -943,9 +952,17 @@ img
   &--prev
     top cw(15)
     transform translateX(-50%) rotate(180deg)
+    xs(top, 50%)
+    xs(left, 0)
+    transform translateX(-50%)
+    xs(transform, translateY(-50%) rotate(90deg))
   &--next
     bottom cw(15)
+    xs(bottom, 50%)
+    xs(right, 0)
+    xs(left, auto)
     transform translateX(-50%)
+    xs(transform, translateY(50%) rotate(-90deg))
   &.slick-disabled
     path
       fill #B9B9B9
@@ -958,6 +975,7 @@ img
 .productBoxProductImages__mainPhoto
   width 82%
   lg(width, auto)
+  xs(order, -1)
   img
     display block
     width 100%
@@ -1019,6 +1037,7 @@ img
   img
     display block
     max-height 150px
+    xs(max-height, 250px)
     width 100%
     height 100%
     object-fit cover
@@ -1085,6 +1104,7 @@ a.productBoxButtons__btn
       color #fff
 .productBoxDesc
   padding-left cw(102)
+  sm(padding-left, 0)
 .productBoxDesc__title
   margin-bottom cw(50)
 .productBoxDesc__desc
@@ -1126,17 +1146,27 @@ a.productBoxButtons__btn
   border-bottom 1px solid $baseColor
   margin-bottom cw(56)
   padding-bottom cw(43)
+  sm(flex-direction, column)
 .productsTableItem__photo 
   width 15%
+  sm(width, 100%)
   margin-right 8%
+  lg(margin-right, 4%)
+  sm(margin-right, 0)
+  sm(margin-bottom, 15px)
   img
     display block
     max-width 100%
     object-fit contain
     max-height 250px
+    sm(margin, 0 auto)
 .productsTableItem__content
   width 35%
+  sm(width, 100%)
+  sm(text-align, center)
   margin-right 13%
+  lg(margin-right, 5%)
+  sm(margin-right, 0)
 .productsTableItem__title
   fz(20)
   line-height (26/20)
@@ -1150,6 +1180,7 @@ a.productBoxButtons__btn
   fz(20)
   line-height (26/20)
   color #979797
+  sm(margin, 0 auto 10px)
   transition all .3s
     path
       transition all .3s
@@ -1167,8 +1198,8 @@ a.productBoxButtons__btn
       align-items center
       margin-left cw(9)
 .productsTableItem__quantity
-  width 16%
-  margin-right 8%
+  width auto
+  sm(margin-bottom, 15px)
 .productsTableItemQuantityBlock
   display flex
   width 202px
@@ -1215,8 +1246,12 @@ a.productBoxButtons__btn
   fz(23)
   line-height (29/23)
   color $baseColor
+  margin-left auto
+  white-space nowrap
+  sm(margin, 0 auto)
 .productsTableBlockTotal
   width 30%
+  sm(width, 190px)
   margin-left auto
   margin-right 0
 .productsTableBlockTotal__sum
@@ -1257,8 +1292,10 @@ a.productBoxButtons__btn
   wrapper()
   display flex
   justify-content space-between
+  sm(flex-direction, column)
 .checkoutForm__first
   width 50%
+  sm(width, 100%)
 .checkoutForm__block
   margin-bottom cw(53)
   &:last-child
@@ -1284,14 +1321,10 @@ a.productBoxButtons__btn
     position relative
     margin-right cw(19)
     &:checked
-      &:after
-        position absolute
-        content url('../images/arrows/checkbox-3.svg')
-        width 18px
-        height 13px
-        left 50%
-        top 50%
-        transform translate(-50%, -50%)
+      background-image url('../images/arrows/checkbox-3.svg')
+      background-size contain
+      background-repeat no-repeat
+      background-position center center
 .checkoutForm__title
   fz(26)
   line-height (34/26)
@@ -1326,6 +1359,7 @@ a.productBoxButtons__btn
 
 .checkoutForm__second
   width 42%
+  sm(width, 100%)
 .checkoutProducts
   border 1px solid $baseColor
   padding cw(30) cw(20)
