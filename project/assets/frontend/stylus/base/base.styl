@@ -587,6 +587,8 @@ img
     .testimonialsSliderItem__moreBtn
       &:after
         transform rotate(180deg)
+    .testimonialsSliderItemImages
+      max-height 700px
 .testimonialsSliderItem__moreBtn
   width fit-content
   display none
@@ -636,6 +638,10 @@ img
   
 .testimonialsSliderItemImages
   display flex
+  flex-wrap wrap
+  max-height 57px
+  overflow-y clip
+  transition all 1s
   // padding-top cw(28)
   img
     display block
@@ -644,6 +650,7 @@ img
   a
     display block
     margin-right cw(20)
+    margin-bottom cw(20)
     &:last-child
       margin-right 0
   // overflow: hidden

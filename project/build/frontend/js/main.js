@@ -35,37 +35,24 @@ window.onload = function() {
       $(window).on("resize", function () {
         var rightOffset = ($(window).width() - ($('.businessCardBlock__textContent').offset().left + $('.businessCardBlock__textContent').outerWidth()));
         $('.businessCardBlockTextContent__decor').css("right", "-" + rightOffset + "px")
-        // console.log('resized4')
       }).resize();
     }
   }
 
   function chechTestimonial (thisBlock) {
     let thisBlockText = thisBlock.find('.testimonialsSliderItem__text')
-    // console.log('thisBlockText', thisBlockText)
-    // let scrollHeight = thisBlockText.prop('scrollHeight');
-    // console.log('scrollHeight', scrollHeight)
-    let height = thisBlockText.height()
-    // let heightCss = thisBlockText.css("height")
-    // console.log('height', height)
-    // console.log('heightCss', heightCss)
-    // var c = $(".testimonialsSliderItem__text").height() + 10
-    if (thisBlockText.prop('scrollHeight') > (height + 10 )) {
+    let textHeight = thisBlockText.height()
+    let thisBlockImages = thisBlock.find('.testimonialsSliderItemImages')
+    let imagesHeight = thisBlockImages.height()
+    if (thisBlockText.prop('scrollHeight') > (textHeight + 10 ) || thisBlockImages.prop('scrollHeight') > (imagesHeight )) {
       //this element is overflowing on the y axis
       thisBlock.addClass('testimonialsSliderItem--scrolled')
-      // console.log('overflowen')
-      // console.log('this = ', thisBlockText)
-      // console.log('a = ', a, 'b = ', b, 'c = ', c)
-    } else {
-      // console.log('no-overflow')
     }
   }
 
   function showMore () {
     $('.testimonialsSliderItem__moreBtn').on('click', function(){
-      // console.log('show more');
       $(this).closest('.testimonialsSliderItem').toggleClass('testimonialsSliderItem--full');
-      // console.log($(this).closest('.testimonialsSliderItem'))
     });
   }
 
@@ -88,8 +75,7 @@ window.onload = function() {
     }else if ($(window).width() < 480) {
       var slidesOnPage = 1;
     }
-    console.log(slidesOnPage)
-    sliderPagination();
+    sliderControls();
     sliderInitialization();
 
     function sliderInitialization () {
@@ -101,11 +87,20 @@ window.onload = function() {
       });
     }
 
-    function sliderPagination () {
+    function sliderControls () {
+      
       var $status = $('.pagingInfoText');
       var $slickElement = $('.testimonialsSlider');
     
       $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+        // height control
+        $('.testimonialsSliderItem--full').each(function() {
+          if (!$(this).hasClass('slick-active')){
+            $(this).removeClass('testimonialsSliderItem--full')
+          }
+        })
+
+        // pagination
         var slickSlideCount = slick.slideCount;
         var slickSlideCountValue = slickSlideCount
         var slideCount = 0;
@@ -114,7 +109,6 @@ window.onload = function() {
           slideCount++
         }
         //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-        // var i = (currentSlide ? currentSlide : 0) + 1;
         var i = (currentSlide ? (currentSlide/slidesOnPage) : 0) + 1;
         $status.text('' + i + '/' + '' + slideCount);
         $('.pagingInfoBlockItems__item').css({width: `${100/slideCount}%`, left: `${ ((i-1)*100) / slideCount }%`})
@@ -253,7 +247,6 @@ window.onload = function() {
     if ($('.modalFirstVisit').length) {
       $('.modalFirstVisit__overlay, .modalFirstVisit__close').on('click', function () {
         $('.modalFirstVisit').removeClass('modalFirstVisit--active');
-        // console.log('closed')
       });
     }
   }
@@ -262,7 +255,6 @@ window.onload = function() {
     // Проверяем если ли в куках запись, что посетитель уже был
     if (!$.cookie('visited')) {
       $(".modalFirstVisit").addClass('modalFirstVisit--active');
-      // console.log('new')
     }
 
     //создаем куки
@@ -300,12 +292,6 @@ window.onload = function() {
     }
   }
 
-  // function currentSlideWidth(){
-  //   if($('.aboutPageSlider').length){
-
-  //   }
-  // }
-
   function aboutPageSlider() {
     if($('.aboutPageSlider').length) {
       $(window).on("resize", function () {
@@ -313,7 +299,6 @@ window.onload = function() {
           $('.aboutPageSlider').addClass('aboutPageSlider--customWidth')
         } else if ($(window).width() < 768) {
           $('.aboutPageSlider').removeClass('aboutPageSlider--customWidth');
-          console.log('lessthan');
         }
       }).resize();
         
@@ -374,25 +359,6 @@ window.onload = function() {
 
 
 
-
-  function foo1(){
-    if($('.testimonialsSlider').length){
-      console.log('foo1')
-    }
-  }
-  function foo2(){
-    if($('.aboutPageSlider').length){
-      console.log('foo2');
-
-      var $slickElement3 = $('.aboutPageSlider');
-      $slickElement3.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-        console.log('foo2-2')
-      });
-    }
-  }
-
-
-
   ///////////////
   // All functions go below
   ///////////////
@@ -430,12 +396,7 @@ window.onload = function() {
   firstVisitModalCookie();
   productQuantityCounter();
   flexibleInput(String('.checkoutForm__inputTextRow'));
-  
-  // currentSlideWidth();
   aboutPageSlider();
-
-  // foo1();
-  // foo2();
 };
 
 
