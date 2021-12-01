@@ -150,7 +150,7 @@ img
 	// width: 50%;
   width auto
 	// max-width: 630px;
-	min-width: 320px;
+	min-width: 310px;
 	height: auto;
 	z-index: 2000;
 	visibility: hidden;
@@ -1461,9 +1461,11 @@ a.productBoxButtons__btn
   justify-content space-between
   height cw(450)
   margin-bottom cw(100)
+  sm(margin-bottom, 85px)
   overflow-x clip
 .pageFirstScreen__first
   width 39%
+  sm(width, 40%)
   img
     margin-left auto
 .pageFirstScreen__second
@@ -1501,8 +1503,11 @@ a.productBoxButtons__btn
   display flex
   justify-content space-between
   align-items flex-end
+  sm(flex-direction, column)
 .aboutUsCardContent
   width 49%
+  sm(width, 100%)
+  sm(margin-bottom, 30px)
   border-left 1px solid $baseColor
   padding cw(45) 0 cw(12) cw(42)
 .aboutUsCardContent__title
@@ -1519,6 +1524,7 @@ a.productBoxButtons__btn
     margin-bottom cw(30)
 .aboutUsCardContent__aside
   width 46%
+  sm(width, 100%)
   padding-bottom cw(72)
 .aboutUsCardContent__asideCard
   border 1px solid $baseColor
@@ -1535,20 +1541,29 @@ a.productBoxButtons__btn
   overflow-x clip
   position relative
 .aboutPageSlider
-  margin 0 -10px
-  margin-right -122px
+  margin 0 -122px 0 -10px
+  // margin-right -122px
+  sm(margin, 0 -10px)
   height 470px
+  sm(height, auto)
   display flex
   flex-direction column
   justify-content flex-end
+  &--customWidth
+    .aboutPageSlider__item.slick-current
+      height 470px
+      max-height 500px
+      width 370px !important
   .slick-track
     display flex
     align-items flex-end
 .aboutPageSlider__item
+  sm(align-self, stretch)
   margin-left 10px
   margin-right 10px
   height auto
   max-height 340px
+  xs(max-height, 410px)
   transition all .7s
   overflow-y clip
   img
@@ -1557,19 +1572,25 @@ a.productBoxButtons__btn
     width 100%
     height 100%
     max-height 500px
-  &.slick-current
-    height 470px
-    max-height 500px
-    width 370px !important
+  // &.slick-current
+  //   height 470px
+  //   sm(height, auto)
+  //   max-height 500px
+  //   sm(max-height, 340px)
+  //   width 370px !important
+  //   sm(width, auto !important)
 .aboutPageSlider__btn
   position absolute
   top -70px
+  sm(top, -50px)
   cursor pointer
   &--prev
     right 305px
+    sm(right, 160px)
     transform rotate(180deg)
   &--next
     right 122px
+    sm(right, 10px)
   &.slick-disabled
     svg
       path
@@ -1595,7 +1616,9 @@ a.productBoxButtons__btn
 .aboutContacts__content
   display flex
   justify-content space-between
+  sm(flex-direction, column)
 .aboutContacts__requisites
+  sm(margin-bottom, 30px)
   p
     fz(22)
     line-height (28/22)
@@ -1654,16 +1677,21 @@ a.productBoxButtons__btn
   position relative
   wrapper()
   padding-top cw(192)
+  xs(padding-top, cw(220))
   padding-bottom cw(228)
 .notFoundBlock__content
   width 64%
+  xs(width, 100%)
   margin-right 0
   margin-left auto
+  xs(margin, 0)
+  xs(text-align, center)
 .notFoundBlock__title
   fz(40)
   line-height (52/40)
   color $baseColor
   padding-left cw(170)
+  sm(padding, 0 0 20px 0)
 .notFoundBlock__subtitle
   fz(150)
   color $baseColor
@@ -1684,6 +1712,8 @@ a.productBoxButtons__btn
   position absolute
   left 0
   top 13px
+  md(transform, scale(0.5))
+  sm(top, -70px)
 
 
 // 404 page styles end
